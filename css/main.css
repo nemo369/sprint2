@@ -1,3 +1,25 @@
+@import "_vars.css";
+@import "_nav.css";
+
 body{
-    background: wheat;
+    background: white;
+}
+footer{
+    background-color: var(--main-color);
+    height: 30px;
+}
+#canvas{
+    display: none;
+}
+.imgPool {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+    height: 500px;
+}
+.singalImg img{
+    height: 150px;
+    display: block;
+    background: red;
 }
