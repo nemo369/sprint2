@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+
+.mainFooter {
+    background-color: coral;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.textBox {
+    width: 400px;
+    height: 150px;
+    padding-right: 50px;
+}
+
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    align-self: center;
+}

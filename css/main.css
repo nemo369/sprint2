@@ -1,6 +1,6 @@
 @import "_vars.css";
 @import "_nav.css";
-
+@import " _footer.css";
 body{
     background: white;
 }

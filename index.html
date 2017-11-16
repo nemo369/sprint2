@@ -8,15 +8,22 @@
 
 <body onload="init()">
     <nav>
-<h2>we have git hub</h2>
+        <h2>we have git hub</h2>
     </nav>
+    <!-- search line -->
+    
+        <div>
+            <input type="text" id="mySearch" name="q" placeholder="Search the site...">
+            <button onclick="searchImg()">Search</button>
+        </div>
+   
     <section class="main">
         <canvas width="568" height="360" id="canvas">
             Sorry, no canvas available
         </canvas>
-    <div class="imgPool">
+        <div class="imgPool">
 
-    </div>
+        </div>
         <!-- <a href="#" id="download" onclick="downloadImg(this)">
             Download as image
         </a> -->
@@ -24,8 +31,14 @@
     <section class="about-us">
 
     </section>
-    <footer>
-
+    <footer class="mainFooter">
+        <div class="textBox">
+            <h3>about</h3>
+            <p>Gin is a spirit which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest
+                origins in the Middle Ages, gin has evolved from use in herbal medicine to an object of commerce in the spirits
+                industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly
+                in London) when William of Orange, leader of the Dutch Republic, </p>
+        </div>
     </footer>
     <script src="js/main.js"></script>
 </body>
