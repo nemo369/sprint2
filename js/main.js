@@ -1,5 +1,6 @@
 console.log('2nd sprint- naamna& Itsik')
 
+
 var gCanvas;
 var ctx;
 // TODO add url .
@@ -72,4 +73,14 @@ function renderPhotos() {
 function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+}
+
+
+
+
+//serch  function
+
+function searchImg() {
+   var elSearchTxt = document.querySelector("#mySearch").value;
+   console.log(elSearchTxt)
 }
