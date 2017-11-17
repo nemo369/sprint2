@@ -72,12 +72,12 @@ function renderPhotos(imgs) {
 
 function searchImg() {
     var elSearchTxt = document.querySelector('#mySearch').value;
-    console.log(elSearchTxt)
     var sortedImgs = [];
     gImgs.forEach(function (sortt, idx) {
-        if (elSearchTxt == gImgs[idx].name) {
+        if (elSearchTxt === gImgs[idx].name) {
             sortedImgs.push(gImgs[idx])
         }
+        console.log(sortedImgs)
     });
     renderPhotos(sortedImgs)
   
