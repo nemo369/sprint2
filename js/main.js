@@ -1,6 +1,5 @@
 console.log('2nd sprint- naamna& Itsik')
 
-
 var gCanvas;
 var ctx;
 // TODO add url .
@@ -14,7 +13,11 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy'] },
     { id: 6, name: 'ddd', keywords: ['sad'] },
     { id: 7, name: 'ddd', keywords: ['sad'] },
 ];
-var gMeme = { selectedImgId: 5, txts: [{ line: 'I never eat Falafel', size: 20, align: 'left', color: 'red' }] }
+// STATE!
+var gMeme = { selectedImgId: 5,src:'',
+         txts:
+         [{ line1: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
+         { line2: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }] }
 
 function init() {
     gCanvas = document.getElementById('canvas');
@@ -28,17 +31,19 @@ function toggleCanvas(toOpen, imgId) {
     if (toOpen) {
         elImgPool.style.display = 'none';
         elCanvas.style.display = 'flex';
-        drawOnCanvas(imgId)
+        gMeme.selectedImgId = imgId;
+        gMeme.src  = `../img/memes/${imgId}-meme.jpg`
+        drawOnCanvas()
     }   else    {
         elImgPool.style.display = 'flex';
         elCanvas.style.display = 'none';  
         // renderPhotos()
     }
 }
-function drawOnCanvas(imgId) {
-
+function drawOnCanvas() {
+    // update the state (globle var)
     img = new Image();
-    img.src = `../img/memes/${imgId}-meme.jpg`
+    img.src = gMeme.src
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
@@ -61,12 +66,12 @@ function renderPhotos() {
     elImgPool.innerHTML = strHtmls.join('')
 }
 
+//serch  function
 
-
-
-
-
-
+function searchImg() {
+    var elSearchTxt = document.querySelector('#mySearch').value;
+    console.log(elSearchTxt)
+ }
 
 
 // /* image extracting 
@@ -78,9 +83,3 @@ function downloadImg(elLink) {
 
 
 
-//serch  function
-
-function searchImg() {
-   var elSearchTxt = document.querySelector("#mySearch").value;
-   console.log(elSearchTxt)
-}

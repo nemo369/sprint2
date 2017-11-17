@@ -1,0 +1,24 @@
+
+.memeGenerator {
+    display: none;
+    flex-direction: column; 
+    /* switch to row on desktop */
+}
+.main{
+    padding:  100px, 40px;
+}
+.imgPool {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+    /* width: 500px; */
+}
+.singalImg img{
+    height: 150px;
+    display: block;
+    background: rgb(99, 99, 99);
+    padding: 5px;
+}

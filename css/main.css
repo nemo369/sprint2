@@ -1,33 +1,8 @@
-@import "vars.css";
-@import "nav.css";
-@import "footer.css";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+@import "_vars.css";
+@import "_nav.css";
+@import "_genrtor.css";
+@import "_footer.css";
 body{
     background: white;
-}
-footer{
-    background-color: var(--main-color);
-    height: 30px;
-}
-.memeGenerator {
-    display: none;
-    flex-direction: column; 
-    /* switch to row on desktop */
-}
-.main{
-    padding:  100px, 40px;
-}
-.imgPool {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-    /* width: 500px; */
-}
-.singalImg img{
-    height: 150px;
-    display: block;
-    background: rgb(99, 99, 99);
-    padding: 5px;
 }
