@@ -8,12 +8,22 @@
 
 <body onload="init()">
     <nav>
-      <ul>
-         <a href="#"><li>portfolio</li></a>
-         <a href="#"><li>about</li></a>
-         <div class ="arrow"><li>⇓</li></div>
-         <a href="#"><li>blog</li></a>
-         <a href="#"><li>get in touch</li></a>
+        <ul>
+            <a href="#">
+                <li>portfolio</li>
+            </a>
+            <a href="#">
+                <li>about</li>
+            </a>
+            <div class="arrow">
+                <li>⇓</li>
+            </div>
+            <a href="#">
+                <li>blog</li>
+            </a>
+            <a href="#">
+                <li>get in touch</li>
+            </a>
         </ul>
     </nav>
     <div class="pointer"></div>
@@ -25,31 +35,17 @@
         <button onclick="searchImg()">Search</button>
     </div>
 
-        <div class="search">
-            <input type="text" id="mySearch" name="q" placeholder="Search the site...">
-            <button onclick="searchImg()">Search</button>
+    <div class="search">
+        <input type="text" id="mySearch" name="q" placeholder="Search the site...">
+        <button onclick="searchImg()">Search</button>
 
         <!-- cloud tag keyword (naaman) -->
         <button onclick="toggleKeyWords()">Sort By Key-Words</button>
         <div class="keywords-cloud">
-            dddd
-        </div>
-    </div>
-    <section class="main">
-        <div class="memeGenerator">
-            <canvas width="568" height="360" id="canvas">
-                Sorry, no canvas available
-            </canvas>
-            <button onclick="toggleCanvas(false)">X</button>
-        </div>
-        <div class="imgPool">
-        </div>
-        <!-- <a href="#" id="download" onclick="downloadImg(this)">
-            Download as image
-        </a> -->
-    </section>
 
-    <section class="key-word-bar">
+
+            <!-- tag keyword (itsik add) -->
+            <!-- <section class="key-word-bar">
         <div class="big-word">sad</div>
         <div class="medium-word">haapy</div>
         <div class="small-word">sad</div>
@@ -60,7 +56,39 @@
         <div class="medium-word">ngd</div>
         <div class="small-word">bdbd</div>
 
+    </section> -->
+        </div>
+    </div>
+    <section class="main">
+        <div class="memeGenerator">
+
+
+            <canvas width="568" height="360" id="canvas">
+                Sorry, no canvas available
+            </canvas>
+            <!-- This is the generator itself, here write the text (itsik) -->
+            <div class="generatorPanel">
+                <button onclick="toggleCanvas(false)">X</button>
+                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme">
+        <!-- Text Formatting buttons (itsik) -->
+                <div class="button-bar">
+                    <button>align left</button>
+                    <button>align right</button>
+                    <button>center</button>
+                    <button>text shadow</button>
+                    <button>text color</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="imgPool">
+        </div>
+        <!-- <a href="#" id="download" onclick="downloadImg(this)">
+            Download as image
+        </a> -->
     </section>
+
+
     <section class="about-us">
 
     </section>
@@ -76,4 +104,5 @@
     <div class="footer-bottom"></div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

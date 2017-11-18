@@ -1,7 +1,10 @@
 
 .memeGenerator {
     display: none;
-    flex-direction: column; 
+    flex-direction: row; 
+    background-color: gray;
+    justify-content: space-between;
+
     /* switch to row on desktop */
 }
 .main{
@@ -35,4 +38,32 @@ canvas {
 }
 .keywords-cloud{
     display: none;
+}
+
+ /* itsik  */
+.generatorPanel {
+    width: 600px;
+    height: 400px;
+    background-color: brown;
+    display: flex; 
+    flex-direction: column; 
+}
+.generatorPanel button {
+     background-color: violet;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+     display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    max-width: 90px;     
+}
+.generatorPanel input {
+  color: blue;
+  max-width: 150px;
+  align-self: center;
 }
