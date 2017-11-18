@@ -26,3 +26,13 @@ canvas {
     margin: 3vw;
     border: .3vw solid gray;
 }
+/* keyword cloud (naaman) */
+.search{
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    margin: 2vw;
+}
+.keywords-cloud{
+    display: none;
+}

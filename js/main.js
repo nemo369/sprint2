@@ -4,14 +4,14 @@ var gCanvas;
 var ctx;
 // TODO add url .
 // TODO function addIMG
-var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy'] },
-{ id: 1, name: 'ddd', keywords: ['sad'] },
-{ id: 2, name: 'aaa', keywords: ['sad'] },
-{ id: 3, name: 'ddd', keywords: ['sad'] },
-{ id: 4, name: 'aaa', keywords: ['sad'] },
-{ id: 5, name: 'ddd', keywords: ['sad'] },
-{ id: 6, name: 'ddd', keywords: ['sad'] },
-{ id: 7, name: 'ddd', keywords: ['sad'] },
+var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy, ironic, hat, purpel'] },
+{ id: 1, name: 'ddd', keywords: ['sad, winter, ironic'] },
+{ id: 2, name: 'aaa', keywords: ['sad, gun, fat, sunglas'] },
+{ id: 3, name: 'ddd', keywords: ['sad, israel, happy'] },
+{ id: 4, name: 'aaa', keywords: ['funny, not sure, ironic'] },
+{ id: 5, name: 'ddd', keywords: ['sad, child, tell me, first world'] },
+{ id: 6, name: 'ddd', keywords: ['sad, israel, happy, hat'] },
+{ id: 7, name: 'ddd', keywords: ['sad, funny'] },
 ];
 // STATE!
 var gMeme = {
@@ -82,6 +82,17 @@ function searchImg() {
     renderPhotos(sortedImgs)
   
 }    
+
+    // keyword sort
+    function toggleKeyWords() {
+        var elCloud = document.querySelector('.keywords-cloud')
+        elCloud.style.display =  elCloud.style.display === 'none' ? 'block' : 'none'
+        // rennder keyword
+        var keywords = gImgs.filter(function (img,idx) {
+            return img.keywords
+        })
+        elCloud.innerHTML = keywords
+    }
     
 
 // /* image extracting 

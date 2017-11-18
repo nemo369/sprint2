@@ -11,7 +11,7 @@
       <ul>
          <a href="#"><li>portfolio</li></a>
          <a href="#"><li>about</li></a>
-         <div class =""><li>arrow</li></div>
+         <div class ="arrow"><li>⇓</li></div>
          <a href="#"><li>blog</li></a>
          <a href="#"><li>get in touch</li></a>
         </ul>
@@ -19,12 +19,16 @@
     <div class="pointer"></div>
     <hr class="nav-hr">
     <!-- search line -->
-    
-        <div>
+        <div class="search">
             <input type="text" id="mySearch" name="q" placeholder="Search the site...">
             <button onclick="searchImg()">Search</button>
+
+        <!-- cloud tag keyword (naaman) -->
+        <button onclick="toggleKeyWords()">Sort By Key-Words</button>
+        <div class="keywords-cloud">
+            dddd
         </div>
-   
+    </div>
     <section class="main">
         <div class="memeGenerator">
         <canvas width="568" height="360" id="canvas">

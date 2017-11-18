@@ -26,12 +26,18 @@ nav ul a:hover{
 .pointer{
     width:0; 
     height:0; 
+    background: white;
     border-top:2vw solid var(--main-bg) ;
     /* border-bottom:30px solid transparent; */
-    border-right:2vw solid transparent;
-    border-left:2vw solid transparent;
+    border-right: 3.5vw solid transparent;
+    border-left:3.5vw solid transparent;
     margin: 0 auto;
     position: absolute;
     align-self: center;
-    right: 48vw;
+    right: 47.5vw;
+}
+.arrow {
+    font-size: 3.5em;
+    padding: .3em;
+    color: white;
 }
