@@ -17,8 +17,8 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy, ironic, hat, purpel'] },
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-    [{ line1: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
-    { line2: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
+    [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
+    { idx: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
 }
 
 function init() {
@@ -42,6 +42,18 @@ function toggleCanvas(toOpen, imgId) {
         // renderPhotos()
     }
 }
+
+// updating gMeme form generatorPanel (itsik)
+
+function getTxt(linIidx) {
+    var eltext = document.querySelector("#textToCanvas").value;
+    gMeme.txts[linIidx].idx = eltext
+    
+}
+
+//TODO function render gmeme to  canvas
+
+
 function drawOnCanvas() {
     // update the state (globle var)
     img = new Image();
@@ -80,20 +92,20 @@ function searchImg() {
         console.log(sortedImgs)
     });
     renderPhotos(sortedImgs)
-  
-}    
 
-    // keyword sort
-    function toggleKeyWords() {
-        var elCloud = document.querySelector('.keywords-cloud')
-        elCloud.style.display =  elCloud.style.display === 'none' ? 'block' : 'none'
-        // rennder keyword
-        var keywords = gImgs.filter(function (img,idx) {
-            return img.keywords
-        })
-        elCloud.innerHTML = keywords
-    }
-    
+}
+
+// keyword sort
+function toggleKeyWords() {
+    var elCloud = document.querySelector('.keywords-cloud')
+    elCloud.style.display = elCloud.style.display === 'none' ? 'block' : 'none'
+    // rennder keyword
+    var keywords = gImgs.filter(function (img, idx) {
+        return img.keywords
+    })
+    elCloud.innerHTML = keywords
+}
+
 
 // /* image extracting 
 function downloadImg(elLink) {
