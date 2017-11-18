@@ -4,21 +4,21 @@ var gCanvas;
 var ctx;
 // TODO add url .
 // TODO function addIMG
-var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy, ironic, hat, purpel'] },
-{ id: 1, name: 'ddd', keywords: ['sad, winter, ironic'] },
-{ id: 2, name: 'aaa', keywords: ['sad, gun, fat, sunglas'] },
-{ id: 3, name: 'ddd', keywords: ['sad, israel, happy'] },
-{ id: 4, name: 'aaa', keywords: ['funny, not sure, ironic'] },
-{ id: 5, name: 'ddd', keywords: ['sad, child, tell me, first world'] },
-{ id: 6, name: 'ddd', keywords: ['sad, israel, happy, hat'] },
-{ id: 7, name: 'ddd', keywords: ['sad, funny'] },
+var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
+{ id: 1, name: 'ddd', keywords: ['sad', 'winter', 'ironic'] },
+{ id: 2, name: 'aaa', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
+{ id: 3, name: 'ddd', keywords: ['sad', 'israel', 'happy'] },
+{ id: 4, name: 'aaa', keywords: ['funny', 'not sure', 'ironic'] },
+{ id: 5, name: 'ddd', keywords: ['sad', 'child',' tell me', 'first world'] },
+{ id: 6, name: 'ddd', keywords: ['sad','israel', 'happy','hat'] },
+{ id: 7, name: 'ddd', keywords: ['sad', 'funny'] },
 ];
 // STATE!
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-    [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
-    { idx: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
+        [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
+        { idx: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
 }
 
 function init() {
@@ -48,7 +48,7 @@ function toggleCanvas(toOpen, imgId) {
 function getTxt(linIidx) {
     var eltext = document.querySelector("#textToCanvas").value;
     gMeme.txts[linIidx].idx = eltext
-    
+
 }
 
 //TODO function render gmeme to  canvas
@@ -97,13 +97,35 @@ function searchImg() {
 
 // keyword sort
 function toggleKeyWords() {
-    var elCloud = document.querySelector('.keywords-cloud')
-    elCloud.style.display = elCloud.style.display === 'none' ? 'block' : 'none'
-    // rennder keyword
-    var keywords = gImgs.filter(function (img, idx) {
-        return img.keywords
-    })
-    elCloud.innerHTML = keywords
+    var elCloud = document.querySelector('.keywords-cloud');
+    elCloud.style.display = elCloud.style.display === 'none' ? 'flex' : 'none';
+    // genrate keywords
+    var keywords = [];
+    gImgs.forEach(function (img, idx) {
+        img.keywords.forEach(function (keyword) {
+            keywords.push(keyword);
+        });
+    });
+    // render keywords
+    var strHtmls = keywords.map(function (keyword, idx) {
+        return `
+            <div class="key-word" onclick="renderByKeyword('${keyword}')">
+             ${keyword} </div> 
+        `
+    });
+    elCloud.innerHTML = strHtmls.join('');
+}
+
+function renderByKeyword(keyword) {
+    console.log(keyword);
+    var sortedImgs = gImgs.filter(function (img) {
+        for (var i = 0; i < img.keywords.length; i++) {
+            console.log(img.keywords[i])
+            if (img.keywords[i] === keyword) return img
+        }
+
+    });
+    renderPhotos(sortedImgs)
 }
 
 

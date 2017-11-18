@@ -38,6 +38,12 @@ canvas {
 }
 .keywords-cloud{
     display: none;
+    flex-wrap: wrap;
+}
+.key-word{
+    background: gray;
+    cursor: pointer;
+    margin: 1vw;
 }
 
  /* itsik  */
