@@ -3,6 +3,9 @@
 @import "_nav.css";
 @import "_genrtor.css";
 @import "_footer.css";
-body{
+html, body{
     background: white;
+    padding: 0;
+    margin: 0;
+    border: none;
 }
