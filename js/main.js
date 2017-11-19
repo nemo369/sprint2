@@ -157,7 +157,6 @@ function getFont(fontName) {
 }
 
 function rendeGneratorPanel() {
-    console.log('11')
     var elGeneratorPanel = document.querySelector('.generatorPanel');
     var strHtml =''
     for (var i = 0; i < gMeme.txts.length; i++) {
