@@ -97,8 +97,6 @@ function renderPhotos(imgs) {
             <img src="img/memes/${img.id}-meme.jpg" alt=""></div> 
         `
     });
-
-
     elImgPool.innerHTML = strHtmls.join('')
 }
 
