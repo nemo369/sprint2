@@ -66,6 +66,9 @@ canvas {
     max-height: 3vw;
     font-size: 3vw;
 }
+#textToCanvas {
+   margin-bottom: 15px;
+}
 
  /* itsik  */
 .generatorPanel {
@@ -75,6 +78,9 @@ canvas {
     display: flex; 
     flex-direction: column; 
     flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: center;
+
 }
 .generatorPanel button {
     background-color: gainsboro;
@@ -108,4 +114,9 @@ canvas {
     text-align: center;
     display: flex;
     justify-content: center;
+}
+.memeGenerator {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
 }
