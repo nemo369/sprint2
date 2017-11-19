@@ -18,8 +18,8 @@ var gMeme = {
     selectedImgId: 5, src: '',
     font: 'Segoe UI',
     txts:
-        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50 },
-        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250 }]
+    [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+    { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
@@ -51,19 +51,37 @@ function getTxt(insertedTxt, i) {
     gMeme.txts[i].line = insertedTxt;
     drawOnCanvas()
 }
-    function txtDirection(direction, x) {
-        gMeme.txts[0].align = direction + "";
-        gMeme.txts[0].y = y
-        drawOnCanvas()
+function txtDirection(direction, x, idx) {
+    gMeme.txts[idx].align = direction + "";
+    gMeme.txts[idx].x = x;
+    drawOnCanvas()
+    console.log(gImgs)
 }
+
+function textDown(y, idx) {
+    gMeme.txts[idx].y += y;
+    drawOnCanvas()
+}
+
+function textUp(y, idx) {
+    gMeme.txts[idx].y -= y;
+    drawOnCanvas()
+
+}
+
+function isTextShadow() {
+   if( gMeme.txts[idx].shadow) {
+      gMeme.txts[idx].shadow = false 
+   } else {
+       gMeme.txts[idx].shadow = true 
+   }
+    drawOnCanvas()
+}
+
 
 function getColor(insertedColor) {
     console.log(insertedColor)
-<<<<<<< HEAD
-    gMeme.txts[0].color = insertedColor;
-=======
     gMeme.txts[1].color = insertedColor;
->>>>>>> 11a1a86f837ed0e3d4e019988b46e60c089b6de2
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
@@ -79,27 +97,19 @@ function drawOnCanvas() {
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-<<<<<<< HEAD
-        ctx.font = `${gMeme.txts[1].size}  'Segoe UI'`;
-        ctx.fillStyle = gMeme.txts[1].color;
-        ctx.fillText(gMeme.txts[0].line, gMeme.txts[0].x, gMeme.txts[0].y);
-        ctx.fillText(gMeme.txts[1].line, gMeme.txts[1].x, gMeme.txts[1].y);
-        // gMeme.txts.forEach(function (txt,i) {
-        //     console.log(txt,idx)
-        //     ctx.font = `${gMeme.txts[idx].size1}  'Segoe UI'`;
-        //     ctx.fillStyle = gMeme.txts[idx].color1 ;
-        //     ctx.fillText(gMeme.txts[idx].idx, 50, 50);
-        //     ctx.fillText(gMeme.txts[1].idx, 50, 300);
-        // })
-=======
-        gMeme.txts.forEach(function (txt,i) {
-            console.log(txt,i)
-        ctx.font = `${txt.size}  ${gMeme.font}`;
-        ctx.fillStyle = txt.color;
-        ctx.fillText(txt.line, txt.x, txt.y);
-        ctx.fillText(txt.line, txt.x, txt.y);
+        gMeme.txts.forEach(function (txt, i) {
+            ctx.font = `${txt.size}  ${gMeme.font}`;
+            ctx.fillStyle = txt.color;
+            ctx.shadowColor = "black";
+            if (txt.shadow) {
+                ctx.shadowColor = "black";
+                ctx.shadowOffsetX = 40;
+                ctx.shadowOffsetY = 40;
+                ctx.shadowBlur = 20;
+            }
+            ctx.fillText(txt.line, txt.x, txt.y);
+            ctx.fillText(txt.line, txt.x, txt.y);
         })
->>>>>>> 11a1a86f837ed0e3d4e019988b46e60c089b6de2
     };
 }
 
