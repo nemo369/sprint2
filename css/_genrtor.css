@@ -80,18 +80,16 @@ canvas {
     flex-wrap: nowrap;
 }
 .generatorPanel button {
-     background-color: violet;
-    border: none;
+    background-color: gainsboro;
+    border: 1px solid black;
     color: white;
     padding: 20px;
     text-align: center;
     text-decoration: none;
-     display: inline-block; 
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 8px;
-    max-width: 90px;     
+    max-width: 80px; 
+    float: left;    
 }
 .generatorPanel input {
   color: blue;
@@ -105,4 +103,12 @@ canvas {
 .font-change{
     min-height: 2em;
     max-width: 10em;
+}
+
+.shadow {
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
