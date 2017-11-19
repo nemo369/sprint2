@@ -37,7 +37,7 @@ canvas {
     margin: 2vw;
 }
 .keywords-cloud{
-    display: none;
+    /* display: none; */
     flex-wrap: wrap;
 }
 .key-word{
@@ -53,6 +53,7 @@ canvas {
     background-color: brown;
     display: flex; 
     flex-direction: column; 
+    flex-wrap: nowrap;
 }
 .generatorPanel button {
      background-color: violet;

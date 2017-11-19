@@ -48,7 +48,7 @@ function toggleCanvas(toOpen, imgId) {
 function getTxt(linIidx) {
     var eltext = document.querySelector("#textToCanvas").value;
     gMeme.txts[linIidx].idx = eltext
-
+    drawOnCanvas() ;
 }
 
 //TODO function render gmeme to  canvas
@@ -63,6 +63,7 @@ function drawOnCanvas() {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "50px 'Segoe UI'";
         ctx.fillStyle = 'white';
+        ctx.fillText(gMeme.txts[1].idx, 50, 50);
     };
 }
 
@@ -98,7 +99,7 @@ function searchImg() {
 // keyword sort
 function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
-    elCloud.style.display = elCloud.style.display === 'none' ? 'flex' : 'none';
+    elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
     // genrate keywords
     var keywords = [];
     gImgs.forEach(function (img, idx) {
@@ -117,13 +118,14 @@ function toggleKeyWords() {
 }
 
 function renderByKeyword(keyword) {
-    console.log(keyword);
+    var elCloud = document.querySelector('.keywords-cloud');
+    elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
+
     var sortedImgs = gImgs.filter(function (img) {
         for (var i = 0; i < img.keywords.length; i++) {
             console.log(img.keywords[i])
             if (img.keywords[i] === keyword) return img
         }
-
     });
     renderPhotos(sortedImgs)
 }

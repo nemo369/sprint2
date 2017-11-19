@@ -4,7 +4,7 @@ nav {
 }
 nav ul{
     list-style: none;
-    padding: 0;
+    /* border-bottom: 5vw; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -13,7 +13,7 @@ nav ul a{
     text-decoration: none;
     color: white;
     font-size: 1.4em;
-    padding: 2vw;
+    padding: .  1vw 3vw 3vw 0;
     margin: 2vw;
 }
 nav ul a:hover{
@@ -36,8 +36,9 @@ nav ul a:hover{
     align-self: center;
     right: 47.5vw;
 }
-.arrow {
-    font-size: 3.5em;
-    padding: .3em;
-    color: white;
+.arrow img{
+    align-self: center;
+    padding:  2vw 0;
+    position: relative;
+    height: 5vw;
 }
