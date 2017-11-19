@@ -17,8 +17,8 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-        [{ line: '', size0: '50px', align0: 'left', color0: 'red', x: 50, y: 50 },
-        { line: '', size1: '50px', align1: 'center', color1: 'blue', x: 250, y: 250 }]
+        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50 },
+        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250 }]
 }
 
 function init() {
@@ -48,12 +48,12 @@ function toggleCanvas(toOpen, imgId) {
 function getTxt(insertedTxt, i) {
     // var insertedTxt = document.querySelector("#textToCanvas").value;
     gMeme.txts[i].line = insertedTxt;
+    drawOnCanvas()
+}
     function txtDirection(direction, y) {
-        gMeme.txts[0].align1 = direction + "";
+        gMeme.txts[0].align = direction + "";
         gMeme.txts[0].y = y
         drawOnCanvas()
-        console.log(gMeme)
-    }
 }
 
 function getColor(insertedColor) {
@@ -74,8 +74,8 @@ function drawOnCanvas() {
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.font = `${gMeme.txts[1].size1}  'Segoe UI'`;
-        ctx.fillStyle = gMeme.txts[1].color1;
+        ctx.font = `${gMeme.txts[1].size}  'Segoe UI'`;
+        ctx.fillStyle = gMeme.txts[1].colors;
         ctx.fillText(gMeme.txts[0].line, gMeme.txts[0].x, gMeme.txts[0].y);
         ctx.fillText(gMeme.txts[1].line, gMeme.txts[1].x, gMeme.txts[1].y);
         // gMeme.txts.forEach(function (txt,i) {
