@@ -17,8 +17,8 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-        [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
-        { idx: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
+        [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', x:250 , y:50 , color1: 'red' },
+        { idx: 'say one more time', size2: 10, align1: 'center', x:250 , y:50 , color2: 'blue' }]
 }
 
 function init() {
@@ -45,10 +45,18 @@ function toggleCanvas(toOpen, imgId) {
 
 // updating gMeme form generatorPanel (itsik)
 
+function txtDirection(direction ,y) {
+    gMeme.txts[0].align1 = direction + "";
+    gMeme.txts[0].y =y
+        drawOnCanvas()
+        console.log(gMeme)
+}
+
 function getTxt(linIidx) {
     var eltext = document.querySelector("#textToCanvas").value;
     gMeme.txts[linIidx].idx = eltext
     drawOnCanvas() ;
+
 }
 
 //TODO function render gmeme to  canvas
@@ -63,7 +71,8 @@ function drawOnCanvas() {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "50px 'Segoe UI'";
         ctx.fillStyle = 'white';
-        ctx.fillText(gMeme.txts[1].idx, 50, 50);
+        ctx.textAlign = "center";       
+        ctx.fillText(gMeme.txts[0].idx, gMeme.txts[0].x, gMeme.txts[0].y);
     };
 }
 
