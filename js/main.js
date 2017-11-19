@@ -18,8 +18,8 @@ var gMeme = {
     selectedImgId: 5, src: '',
     font: 'Segoe UI',
     txts:
-        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50 },
-        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250 }]
+    [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+    { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
@@ -52,14 +52,42 @@ function getTxt(insertedTxt, i) {
     gMeme.txts[i].line = insertedTxt;
     drawOnCanvas()
 }
-    function txtDirection(direction, y) {
-        gMeme.txts[0].align = direction + "";
-        gMeme.txts[0].y = y
-        drawOnCanvas()
+function txtDirection(direction, x, idx) {
+    gMeme.txts[idx].align = direction + "";
+    gMeme.txts[idx].x = x;
+    drawOnCanvas()
+    console.log(gImgs)
 }
 
+<<<<<<< HEAD
+function textDown(y, idx) {
+    gMeme.txts[idx].y += y;
+    drawOnCanvas()
+}
+
+function textUp(y, idx) {
+    gMeme.txts[idx].y -= y;
+    drawOnCanvas()
+
+}
+
+function isTextShadow() {
+   if( gMeme.txts[idx].shadow) {
+      gMeme.txts[idx].shadow = false 
+   } else {
+       gMeme.txts[idx].shadow = true 
+   }
+    drawOnCanvas()
+}
+
+
+function getColor(insertedColor) {
+    console.log(insertedColor)
+    gMeme.txts[1].color = insertedColor;
+=======
 function getColor(insertedColor,i) {
     gMeme.txts[i].color = insertedColor;
+>>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
@@ -75,11 +103,26 @@ function drawOnCanvas() {
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
+<<<<<<< HEAD
+        gMeme.txts.forEach(function (txt, i) {
+            ctx.font = `${txt.size}  ${gMeme.font}`;
+            ctx.fillStyle = txt.color;
+            ctx.shadowColor = "black";
+            if (txt.shadow) {
+                ctx.shadowColor = "black";
+                ctx.shadowOffsetX = 40;
+                ctx.shadowOffsetY = 40;
+                ctx.shadowBlur = 20;
+            }
+            ctx.fillText(txt.line, txt.x, txt.y);
+            ctx.fillText(txt.line, txt.x, txt.y);
+=======
         gMeme.txts.forEach(function (txt,i) {
         ctx.font = `${txt.size}  ${gMeme.font}`;
         ctx.fillStyle = txt.color;
         ctx.fillText(txt.line, txt.x, txt.y);
         ctx.fillText(txt.line, txt.x, txt.y);
+>>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
         })
     };
 }

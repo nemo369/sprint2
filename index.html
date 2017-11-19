@@ -70,6 +70,25 @@
 
             <div class="generatorFueturs">
                 <button onclick="toggleCanvas(false)">X</button>
+<<<<<<< HEAD
+                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 0)">
+                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 1)">
+                <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,1)">
+                <input type="color"  id="color-picker" onchange="getColor(this.value)">
+                
+                <!-- Text Formatting buttons (itsik) -->
+
+                <div class="button-bar">
+                    <button onclick="txtDirection('left',400 ,0)">align left</button>
+                    <button onclick="txtDirection('right',20 ,0)">align right</button>
+                    <button onclick="txtDirection('center',230 ,0)">center</button>
+                    <button class="isTextShadow()">text shadow</button>
+                    <button>text color</button>
+                    <button onclick="textUp(10,0)" >text up</button>
+                    <button onclick="textDown(10,0)">text down</button>
+                </div>
+
+=======
                 <button onclick="addTextLine()">Add Text Line</button>
                 <select class="font-change" onchange="getFont(this.value)">
                     <option value="verdana">verdana</option>
@@ -78,6 +97,7 @@
                     <option value="Times New Roman">Times New Roman</option>
                 </select>
                 <div class="generatorPanel"></div>
+>>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
             </div>
         </div>
         </div>
