@@ -34,17 +34,19 @@
     <div class="pointer"></div>
     <hr class="nav-hr">
     <!-- search line -->
-
     <div class="search">
-        <input onkeyup="searchImg()" type="search" id="mySearch" name="q" placeholder="Search for memes...">
-        <button onclick="searchImg()">Search</button>
+        <input onkeyup="searchImg()" onfocusout="renderPhotos(gImgs)" type="search" id="mySearch" name="q" placeholder="Search for memes...">
+        <button onclick="renderPhotos(gImgs)">All Memes</button>
 
         <!-- cloud tag keyword (naaman) -->
         <button onclick="toggleKeyWords()">Sort By Key-Words</button>
         <div class="keywords-cloud" hidden>
         </div>
-        <input type="file" name="pic" accept="image/*">
+        <input type="file" onchange="getUserImg(this.value)" accept="image/*">
     </div>
+    <div class="imgPool">
+    </div>
+
     <section class="main">
         <div class="memeGenerator">
             <canvas width="568" height="360" id="canvas">
@@ -59,20 +61,31 @@
                     <option value="Segoe UI">Segoe UI</option>
                     <option value="Arial">Arial </option>
                 </select>
-<!-- rendering from JS -->
+                <a href="#" id="download" onclick="downloadImg(this)">
+                    <button> Download as image</button>
+                </a>
+                <!-- rendering from JS -->
                 <div class="generatorPanel"></div>
             </div>
         </div>
-        </div>
-        </div>
-        <div class="imgPool">
-        </div>
-        <!-- <a href="#" id="download" onclick="downloadImg(this)">
-            Download as image
-        </a> -->
     </section>
+<div class="about-us-wraper">
     <section class="about-us">
+        <img src="img/profile-pic.jpg" alt="">
+        <div class="about-us-txt">
+        <h2> Naaman       </h2>
+        <h3>
+            Web Devlepoers
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Hic cumque asperiores magnam sapiente reprehenderit adipisci
+             iure, est vel error molestiae saepe aliquam eaque quod nam?
+              Ipsa quasi illum ipsum aspernatur?
+        </p>
+    </div>
     </section>
+</div>
     <footer class="mainFooter">
         <div class="textBox">
             <h3>about</h3>
@@ -82,8 +95,9 @@
                 in London) when William of Orange, leader of the Dutch Republic, </p>
         </div>
     </footer>
-    <div class="footer-bottom"></div>
+    <div class="footer-bottom">© Copyright 2017 Nemo & Itzik</div>
     <script src="js/generatorFueturs.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
