@@ -41,7 +41,15 @@ function toggleCanvas(toOpen, imgId) {
     } else {
         elImgPool.style.display = 'flex';
         elCanvas.style.display = 'none';
-        // renderPhotos()
+         gMeme = {
+            selectedImgId: 5,
+            src: '',
+            font: 'Segoe UI',
+            txts:[
+            { line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+            { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }
+            ]};
+            rendeGneratorPanel()
     }
 }
 
@@ -101,7 +109,8 @@ function drawOnCanvas() {
         gMeme.txts.forEach(function (txt, i) {
             ctx.font = `${txt.size}  ${gMeme.font}`;
             ctx.fillStyle = txt.color;
-            ctx.shadowColor = "black";
+            ctx.fillText(txt.line, txt.x, txt.y);
+            ctx.fillText(txt.line, txt.x, txt.y);
             if (txt.shadow) {
                 ctx.shadowColor = "black";
                 ctx.shadowOffsetX = 40;
@@ -126,8 +135,6 @@ function renderPhotos(imgs) {
     elImgPool.innerHTML = strHtmls.join('')
 }
 
-//serch  function
-
 function searchImg() {
     var elSearchTxt = document.querySelector('#mySearch').value;
     var sortedImgs = [];
@@ -140,7 +147,6 @@ function searchImg() {
 
 }
 
-// keyword sort
 function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
     elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
@@ -178,35 +184,4 @@ function renderByKeyword(keyword) {
 function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
-}
-
-function getFont(fontName) {
-    console.log(fontName)
-    gMeme.font = fontName;
-    drawOnCanvas()
-}
-
-function rendeGneratorPanel() {
-    console.log('11')
-    var elGeneratorPanel = document.querySelector('.generatorPanel');
-    var strHtml =''
-    for (var i = 0; i < gMeme.txts.length; i++) {
-        strHtml += `<input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
-        <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,${i})">
-        <input type="color"  id="color-picker" onchange="getColor(this.value,${i})">
-        <div class="button-bar">
-            <button onclick="txtDirection('center',150)">align left</button>
-            <button>align right</button>
-            <button>center</button>
-            <button>text shadow</button>
-            <button>text color</button>
-        </div>`
-    }
-    elGeneratorPanel.innerHTML = strHtml;
-}
-
-function addTextLine() {
-    var newLine = {line: '', size: '50px', align: 'left', color: 'red', x: 150, y: 150 }
-    gMeme.txts.push(newLine);
-    rendeGneratorPanel()
 }
