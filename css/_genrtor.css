@@ -31,11 +31,6 @@ canvas {
 .search{
     display: flex;
     justify-content: space-around;
-<<<<<<< HEAD
-    flex: 1;
-    margin: 2vw;
-    color: var(--main-color)
-=======
     align-content: center;
     flex: 1;
     margin: 2vw;
@@ -43,17 +38,13 @@ canvas {
     font-size: 2vw;
     width: 100%;
     
->>>>>>> 1af5a430e71016383a53585f2990d232281900d8
 }
 .search button{
     background-color: var(--main-color);
     padding: 1em;
     border: none;
     color: white;
-<<<<<<< HEAD
-=======
     font-size: 1vw;
->>>>>>> 1af5a430e71016383a53585f2990d232281900d8
 }
 .keywords-cloud{
     margin-top: 4vw;
