@@ -67,6 +67,12 @@
 
             <div class="generatorPanel">
                 <button onclick="toggleCanvas(false)">X</button>
+                <select class="font" onchange="getFont(this.value)">
+                    <option value="verdana">verdana</option>
+                    <option value="Segoe UI">Segoe UI</option>
+                    <option value="Arial">Arial </option>
+                    <option value="Times New Roman">Times New Roman</option>
+                  </select>
                 <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 0)">
                 <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 1)">
                 <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,1)">

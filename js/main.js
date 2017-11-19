@@ -76,7 +76,6 @@ function drawOnCanvas() {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         gMeme.txts.forEach(function (txt,i) {
-            console.log(txt,i)
         ctx.font = `${txt.size}  ${gMeme.font}`;
         ctx.fillStyle = txt.color;
         ctx.fillText(txt.line, txt.x, txt.y);
