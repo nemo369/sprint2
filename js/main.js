@@ -151,7 +151,6 @@ function downloadImg(elLink) {
 }
 
 function getFont(fontName) {
-    console.log(fontName)
     gMeme.font = fontName;
     drawOnCanvas()
 }
