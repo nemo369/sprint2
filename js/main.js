@@ -4,22 +4,23 @@ var gCanvas;
 var ctx;
 // TODO add url .
 // TODO function addIMG
-var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
-{ id: 1, name: 'ddd', keywords: ['sad', 'winter', 'ironic'] },
-{ id: 2, name: 'aaa', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
+var gImgs = [{ id: 0, name: 'aaa', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
+{ id: 1, name: 'dbbbdd', keywords: ['sad', 'winter', 'ironic'] },
+{ id: 2, name: 'ccc', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
 { id: 3, name: 'ddd', keywords: ['sad', 'israel', 'happy'] },
-{ id: 4, name: 'aaa', keywords: ['funny', 'not sure', 'ironic'] },
-{ id: 5, name: 'ddd', keywords: ['sad', 'child', ' tell me', 'first world'] },
-{ id: 6, name: 'ddd', keywords: ['sad', 'israel', 'happy', 'hat'] },
-{ id: 7, name: 'ddd', keywords: ['sad', 'funny'] },
+{ id: 4, name: 'e', keywords: ['funny', 'not sure', 'ironic'] },
+{ id: 5, name: 'ccca', keywords: ['sad', 'child', ' tell me', 'first world'] },
+{ id: 6, name: 'zzzz', keywords: ['sad', 'israel', 'happy', 'hat'] },
+{ id: 7, name: 'dzsfadd', keywords: ['sad', 'funny'] },
 ];
 // STATE!
 var gMeme = {
-    selectedImgId: 5, src: '',
+    selectedImgId: 5,
+    src: '',
     font: 'Segoe UI',
     txts:
-    [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-    { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
+        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
@@ -30,81 +31,39 @@ function init() {
 }
 // toggle canvas
 function toggleCanvas(toOpen, imgId) {
-    var elImgPool = document.querySelector(".imgPool");
-    var elCanvas = document.querySelector(".memeGenerator");
+    var elImgPool = document.querySelector('.imgPool');
+    var elSearch = document.querySelector('.search')
+    var elCanvas = document.querySelector('.memeGenerator');
     if (toOpen) {
         elImgPool.style.display = 'none';
+        elSearch.style.display = 'none';
         elCanvas.style.display = 'flex';
         gMeme.selectedImgId = imgId;
         gMeme.src = `../img/memes/${imgId}-meme.jpg`
-        drawOnCanvas()
+        loadImg()
     } else {
         elImgPool.style.display = 'flex';
         elCanvas.style.display = 'none';
-         gMeme = {
+        elSearch.style.display = 'flex';
+        gMeme = {
             selectedImgId: 5,
             src: '',
             font: 'Segoe UI',
-            txts:[
-            { line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-            { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }
-            ]};
-            rendeGneratorPanel()
+            txts: [
+                { line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+                { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }
+            ]
+        };
+        rendeGneratorPanel()
     }
 }
-
-// updating gMeme form generatorPanel (itsik)
-
-function getTxt(insertedTxt, i) {
-    // var insertedTxt = document.querySelector("#textToCanvas").value;
-    gMeme.txts[i].line = insertedTxt;
-    drawOnCanvas()
-}
-function txtDirection(direction, x, idx) {
-    gMeme.txts[idx].align = direction + "";
-    gMeme.txts[idx].x = x;
-    drawOnCanvas()
-    console.log(gImgs)
-}
-
-function textDown(y, idx) {
-    gMeme.txts[idx].y += y;
-    drawOnCanvas()
-}
-
-function textUp(y, idx) {
-    gMeme.txts[idx].y -= y;
-    drawOnCanvas()
-
-}
-
-function isTextShadow() {
-   if( gMeme.txts[idx].shadow) {
-      gMeme.txts[idx].shadow = false 
-   } else {
-       gMeme.txts[idx].shadow = true 
-   }
-    drawOnCanvas()
-}
-
-
-function getColor(insertedColor) {
-    console.log(insertedColor)
-    gMeme.txts[1].color = insertedColor;
-    drawOnCanvas()
-}
-//TODO function render gmeme to  canvas
-
-function getFontSize(insertedSize, i) {
-    console.log(insertedSize, i);
-    gMeme.txts[i].size = insertedSize + 'px';
-    drawOnCanvas();
-}
-function drawOnCanvas() {
+function loadImg() {
     img = new Image();
     img.src = gMeme.src
-
-    img.onload = function () {
+    img.onload = drawOnCanvas()
+}
+// Main Function (itsik)
+function drawOnCanvas() {
         ctx.drawImage(img, 0, 0, 568, 360);
         gMeme.txts.forEach(function (txt, i) {
             ctx.font = `${txt.size}  ${gMeme.font}`;
@@ -120,7 +79,6 @@ function drawOnCanvas() {
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
         })
-    };
 }
 
 function renderPhotos(imgs) {
@@ -136,15 +94,14 @@ function renderPhotos(imgs) {
 }
 
 function searchImg() {
-    var elSearchTxt = document.querySelector('#mySearch').value;
+    var searchTxt = document.querySelector('#mySearch').value;
     var sortedImgs = [];
-    gImgs.forEach(function (sortt, idx) {
-        if (elSearchTxt === gImgs[idx].name) {
-            sortedImgs.push(gImgs[idx])
+    gImgs.forEach(function (img,i) {
+        if (img.name.includes(searchTxt)) {
+            sortedImgs.push(img) 
         }
     });
     renderPhotos(sortedImgs)
-
 }
 
 function toggleKeyWords() {
@@ -184,4 +141,16 @@ function renderByKeyword(keyword) {
 function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+}
+
+function getUserImg(userImg) {
+    console.log(userImg)
+    gMeme.selectedImgId = 'userUpload',
+    gMeme.src = userImg;
+    //toggle img Pool
+    var elImgPool = document.querySelector(".imgPool");
+    var elCanvas = document.querySelector(".memeGenerator");
+    elImgPool.style.display = 'none';
+    elCanvas.style.display = 'flex';
+    drawOnCanvas()
 }

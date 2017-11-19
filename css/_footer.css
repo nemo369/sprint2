@@ -18,5 +18,29 @@ h3 {
 }
 .footer-bottom{
     background-color: var(--secondary-bg);
-    height: 15px;
+    height: 2vw;
+    color: gray;
+    padding: 1vw;
+}
+.about-us-wraper{
+    background-color: var(--main-color);
+    max-height: 35vw;
+}
+.about-us{
+    border: .1vw solid gray;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 5vw 10vw 0  10vw;
+}
+.about-us img{
+    height: 20vw;
+}
+.about-us-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 5vw;
 }
