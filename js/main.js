@@ -9,16 +9,16 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'
 { id: 2, name: 'aaa', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
 { id: 3, name: 'ddd', keywords: ['sad', 'israel', 'happy'] },
 { id: 4, name: 'aaa', keywords: ['funny', 'not sure', 'ironic'] },
-{ id: 5, name: 'ddd', keywords: ['sad', 'child',' tell me', 'first world'] },
-{ id: 6, name: 'ddd', keywords: ['sad','israel', 'happy','hat'] },
+{ id: 5, name: 'ddd', keywords: ['sad', 'child', ' tell me', 'first world'] },
+{ id: 6, name: 'ddd', keywords: ['sad', 'israel', 'happy', 'hat'] },
 { id: 7, name: 'ddd', keywords: ['sad', 'funny'] },
 ];
 // STATE!
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-        [{ line: '', size0: '50px', align0: 'left', color0: 'red', x:250 , y:50 },
-        { line: '', size1:'50px', align1: 'center', color1: 'blue', x:250 , y:50  }]
+        [{ line: '', size0: '50px', align0: 'left', color0: 'red', x: 50, y: 50 },
+        { line: '', size1: '50px', align1: 'center', color1: 'blue', x: 250, y: 250 }]
 }
 
 function init() {
@@ -45,21 +45,15 @@ function toggleCanvas(toOpen, imgId) {
 
 // updating gMeme form generatorPanel (itsik)
 
-function getTxt(insertedTxt,i) {
+function getTxt(insertedTxt, i) {
     // var insertedTxt = document.querySelector("#textToCanvas").value;
     gMeme.txts[i].line = insertedTxt;
-function txtDirection(direction ,y) {
-    gMeme.txts[0].align1 = direction + "";
-    gMeme.txts[0].y =y
+    function txtDirection(direction, y) {
+        gMeme.txts[0].align1 = direction + "";
+        gMeme.txts[0].y = y
         drawOnCanvas()
         console.log(gMeme)
-}
-
-function getTxt(linIidx) {
-    var eltext = document.querySelector("#textToCanvas").value;
-    gMeme.txts[linIidx].idx = eltext
-    drawOnCanvas() ;
-
+    }
 }
 
 function getColor(insertedColor) {
@@ -69,10 +63,10 @@ function getColor(insertedColor) {
 }
 //TODO function render gmeme to  canvas
 
-function getFontSize(insertedSize,i) {
-    console.log(insertedSize,i);
-    gMeme.txts[i].size1 = insertedSize+'px';
-    drawOnCanvas() ;
+function getFontSize(insertedSize, i) {
+    console.log(insertedSize, i);
+    gMeme.txts[i].size1 = insertedSize + 'px';
+    drawOnCanvas();
 }
 function drawOnCanvas() {
     img = new Image();
@@ -81,9 +75,9 @@ function drawOnCanvas() {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = `${gMeme.txts[1].size1}  'Segoe UI'`;
-        ctx.fillStyle = gMeme.txts[1].color1 ;
+        ctx.fillStyle = gMeme.txts[1].color1;
         ctx.fillText(gMeme.txts[0].line, gMeme.txts[0].x, gMeme.txts[0].y);
-        ctx.fillText(gMeme.txts[1].line ,gMeme.txts[0].x, gMeme.txts[0].y);
+        ctx.fillText(gMeme.txts[1].line, gMeme.txts[1].x, gMeme.txts[1].y);
         // gMeme.txts.forEach(function (txt,i) {
         //     console.log(txt,idx)
         //     ctx.font = `${gMeme.txts[idx].size1}  'Segoe UI'`;
@@ -161,7 +155,3 @@ function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
 }
-
-
-
-
