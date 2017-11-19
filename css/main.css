@@ -4,6 +4,7 @@
 @import "_nav.css";
 @import "_genrtor.css";
 @import "_footer.css";
+@import "hex.css";
 html, body{
     background: white;
     padding: 0;

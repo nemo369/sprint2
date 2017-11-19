@@ -11,19 +11,22 @@
     padding:  100px, 40px;
 }
 .imgPool {
-
+    width: 60vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-content: center;
     overflow: hidden;
-    /* width: 500px; */
+    padding: 0 22vw;
 }
 .singalImg img{
-    height: 150px;
-    display: block;
-    background: rgb(99, 99, 99);
-    padding: 5px;
+    margin: 3vw 1vw 0 0;
+    width: 13vw;
+    height: 13vw;
+    overflow: hidden;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);    
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 canvas {
 }
@@ -54,6 +57,7 @@ canvas {
     width: 50vw;
     position: absolute;
     flex-wrap: wrap;
+    z-index: 1;
 }
 .key-word{
     display: block;
@@ -64,7 +68,7 @@ canvas {
     cursor: pointer;
     margin: 1vw;
     max-height: 3vw;
-    font-size: 3vw;
+    font-size: .6em;
 }
 
  /* itsik  */

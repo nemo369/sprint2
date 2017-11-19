@@ -86,7 +86,7 @@ function renderPhotos(imgs) {
 
     var strHtmls = imgs.map(function (img, idx) {
         return `
-            <div class="singalImg" onclick="toggleCanvas(true, ${img.id})">
+            <div class="singalImg flex" onclick="toggleCanvas(true, ${img.id})">
             <img src="img/memes/${img.id}-meme.jpg" alt=""></div> 
         `
     });
