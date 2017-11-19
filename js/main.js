@@ -59,7 +59,6 @@ function txtDirection(direction, x, idx) {
     console.log(gImgs)
 }
 
-<<<<<<< HEAD
 function textDown(y, idx) {
     gMeme.txts[idx].y += y;
     drawOnCanvas()
@@ -84,10 +83,6 @@ function isTextShadow() {
 function getColor(insertedColor) {
     console.log(insertedColor)
     gMeme.txts[1].color = insertedColor;
-=======
-function getColor(insertedColor,i) {
-    gMeme.txts[i].color = insertedColor;
->>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
@@ -103,7 +98,6 @@ function drawOnCanvas() {
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-<<<<<<< HEAD
         gMeme.txts.forEach(function (txt, i) {
             ctx.font = `${txt.size}  ${gMeme.font}`;
             ctx.fillStyle = txt.color;
@@ -116,13 +110,6 @@ function drawOnCanvas() {
             }
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
-=======
-        gMeme.txts.forEach(function (txt,i) {
-        ctx.font = `${txt.size}  ${gMeme.font}`;
-        ctx.fillStyle = txt.color;
-        ctx.fillText(txt.line, txt.x, txt.y);
-        ctx.fillText(txt.line, txt.x, txt.y);
->>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
         })
     };
 }
