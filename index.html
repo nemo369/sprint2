@@ -32,13 +32,8 @@
     <hr class="nav-hr">
     <!-- search line -->
 
-    <div>
-        <input type="text" id="mySearch" name="q" placeholder="Search the site...">
-        <button onclick="searchImg()">Search</button>
-    </div>
-
     <div class="search">
-        <input type="text" id="mySearch" name="q" placeholder="Search the site...">
+        <input onkeyup="searchImg()" type="search" id="mySearch" name="q" placeholder="Search for memes...">
         <button onclick="searchImg()">Search</button>
 
         <!-- cloud tag keyword (naaman) -->
@@ -72,7 +67,9 @@
 
             <div class="generatorPanel">
                 <button onclick="toggleCanvas(false)">X</button>
-                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt (1)">
+                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 0)">
+                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 1)">
+                <input type="color"  id="color-picker" onchange="getColor(this.value)">
                 <!-- Text Formatting buttons (itsik) -->
 
                 <div class="button-bar">

@@ -17,8 +17,8 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-        [{ idx: 'I never eat Falafel', size1: 20, align1: 'left', color1: 'red' },
-        { idx: 'say one more time', size2: 10, align1: 'center', color2: 'blue' }]
+        [{ idx: '0', size0: 20, align0: 'left', color0: 'red' },
+        { idx: '1', size1: 10, align1: 'center', color1: 'blue' }]
 }
 
 function init() {
@@ -45,25 +45,31 @@ function toggleCanvas(toOpen, imgId) {
 
 // updating gMeme form generatorPanel (itsik)
 
-function getTxt(linIidx) {
-    var eltext = document.querySelector("#textToCanvas").value;
-    gMeme.txts[linIidx].idx = eltext
+function getTxt(insertedTxt, i) {
+    var insertedTxt = document.querySelector("#textToCanvas").value;
+    gMeme.txts[i].idx = insertedTxt;
     drawOnCanvas() ;
 }
 
+function getColor(insertedColor) {
+    console.log(insertedColor)
+    gMeme.txts[1].color1 = insertedColor;
+    drawOnCanvas()
+}
 //TODO function render gmeme to  canvas
 
 
 function drawOnCanvas() {
-    // update the state (globle var)
     img = new Image();
     img.src = gMeme.src
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = "50px 'Segoe UI'";
-        ctx.fillStyle = 'white';
-        ctx.fillText(gMeme.txts[1].idx, 50, 50);
+        ctx.fillStyle = gMeme.txts[1].color1 ;
+        // ctx.fillStyle = 'white' ;
+        ctx.fillText(gMeme.txts[0].idx, 50, 50);
+        ctx.fillText(gMeme.txts[1].idx, 50, 300);
     };
 }
 
@@ -90,7 +96,6 @@ function searchImg() {
         if (elSearchTxt === gImgs[idx].name) {
             sortedImgs.push(gImgs[idx])
         }
-        console.log(sortedImgs)
     });
     renderPhotos(sortedImgs)
 
@@ -123,7 +128,6 @@ function renderByKeyword(keyword) {
 
     var sortedImgs = gImgs.filter(function (img) {
         for (var i = 0; i < img.keywords.length; i++) {
-            console.log(img.keywords[i])
             if (img.keywords[i] === keyword) return img
         }
     });
