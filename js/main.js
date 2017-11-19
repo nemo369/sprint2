@@ -114,14 +114,28 @@ function toggleKeyWords() {
             keywords.push(keyword);
         });
     });
+    // create tag cloud
+    var keywordCount = {}
+    for (var i = 0; i < keywords.length; i++) {
+        var word = keywords[i];
+        !keywordCount[word]?  keywordCount[word] = 1: keywordCount[word]++
+    }
     // render keywords
-    var strHtmls = keywords.map(function (keyword, idx) {
-        return `
-            <div class="key-word" onclick="renderByKeyword('${keyword}')">
-             ${keyword} </div> 
-        `
-    });
-    elCloud.innerHTML = strHtmls.join('');
+    console.log(keywordCount)
+    // var strHtmls = keywords.map(function (keyword, idx) {
+    //     return `
+    //         <div class="key-word" onclick="renderByKeyword('${keyword}')">
+    //          ${keyword} </div> 
+    //     `
+    // });
+    var strHtmls = '';
+    for (word in keywordCount){
+        strHtmls += `<div class="key-word" onclick="renderByKeyword('${word}')">
+       <span style="font-size:${keywordCount[word]}em"> ${word} </span> </div> `
+       console.log(keywordCount[word])
+    }
+    // elCloud.innerHTML = strHtmls.join('');
+    elCloud.innerHTML = strHtmls
 }
 
 function renderByKeyword(keyword) {

@@ -67,8 +67,7 @@ canvas {
     padding: 1vw;
     cursor: pointer;
     margin: 1vw;
-    max-height: 3vw;
-    font-size: .6em;
+    /* max-height: 3vw; */
 }
 
  /* itsik  */
