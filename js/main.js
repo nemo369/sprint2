@@ -25,6 +25,7 @@ var gMeme = {
 function init() {
     gCanvas = document.getElementById('canvas');
     ctx = gCanvas.getContext('2d');
+    rendeGneratorPanel();
     renderPhotos(gImgs)
 }
 // toggle canvas
@@ -58,6 +59,7 @@ function txtDirection(direction, x, idx) {
     console.log(gImgs)
 }
 
+<<<<<<< HEAD
 function textDown(y, idx) {
     gMeme.txts[idx].y += y;
     drawOnCanvas()
@@ -82,6 +84,10 @@ function isTextShadow() {
 function getColor(insertedColor) {
     console.log(insertedColor)
     gMeme.txts[1].color = insertedColor;
+=======
+function getColor(insertedColor,i) {
+    gMeme.txts[i].color = insertedColor;
+>>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
@@ -97,6 +103,7 @@ function drawOnCanvas() {
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
+<<<<<<< HEAD
         gMeme.txts.forEach(function (txt, i) {
             ctx.font = `${txt.size}  ${gMeme.font}`;
             ctx.fillStyle = txt.color;
@@ -109,6 +116,13 @@ function drawOnCanvas() {
             }
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
+=======
+        gMeme.txts.forEach(function (txt,i) {
+        ctx.font = `${txt.size}  ${gMeme.font}`;
+        ctx.fillStyle = txt.color;
+        ctx.fillText(txt.line, txt.x, txt.y);
+        ctx.fillText(txt.line, txt.x, txt.y);
+>>>>>>> 3b3c58719f1d19bf8de6050e2e604e0ec07a8bda
         })
     };
 }
@@ -177,4 +191,35 @@ function renderByKeyword(keyword) {
 function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+}
+
+function getFont(fontName) {
+    console.log(fontName)
+    gMeme.font = fontName;
+    drawOnCanvas()
+}
+
+function rendeGneratorPanel() {
+    console.log('11')
+    var elGeneratorPanel = document.querySelector('.generatorPanel');
+    var strHtml =''
+    for (var i = 0; i < gMeme.txts.length; i++) {
+        strHtml += `<input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
+        <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,${i})">
+        <input type="color"  id="color-picker" onchange="getColor(this.value,${i})">
+        <div class="button-bar">
+            <button onclick="txtDirection('center',150)">align left</button>
+            <button>align right</button>
+            <button>center</button>
+            <button>text shadow</button>
+            <button>text color</button>
+        </div>`
+    }
+    elGeneratorPanel.innerHTML = strHtml;
+}
+
+function addTextLine() {
+    var newLine = {line: '', size: '50px', align: 'left', color: 'red', x: 150, y: 150 }
+    gMeme.txts.push(newLine);
+    rendeGneratorPanel()
 }

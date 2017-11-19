@@ -78,3 +78,7 @@ canvas {
 #textToCanvas{
     position: relative;
 }
+.font-change{
+    min-height: 2em;
+    max-width: 10em;
+}
