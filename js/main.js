@@ -25,6 +25,7 @@ var gMeme = {
 function init() {
     gCanvas = document.getElementById('canvas');
     ctx = gCanvas.getContext('2d');
+    rendeGneratorPanel();
     renderPhotos(gImgs)
 }
 // toggle canvas
@@ -57,9 +58,8 @@ function getTxt(insertedTxt, i) {
         drawOnCanvas()
 }
 
-function getColor(insertedColor) {
-    console.log(insertedColor)
-    gMeme.txts[1].color = insertedColor;
+function getColor(insertedColor,i) {
+    gMeme.txts[i].color = insertedColor;
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
@@ -148,4 +148,35 @@ function renderByKeyword(keyword) {
 function downloadImg(elLink) {
     elLink.href = gCanvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+}
+
+function getFont(fontName) {
+    console.log(fontName)
+    gMeme.font = fontName;
+    drawOnCanvas()
+}
+
+function rendeGneratorPanel() {
+    console.log('11')
+    var elGeneratorPanel = document.querySelector('.generatorPanel');
+    var strHtml =''
+    for (var i = 0; i < gMeme.txts.length; i++) {
+        strHtml += `<input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
+        <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,${i})">
+        <input type="color"  id="color-picker" onchange="getColor(this.value,${i})">
+        <div class="button-bar">
+            <button onclick="txtDirection('center',150)">align left</button>
+            <button>align right</button>
+            <button>center</button>
+            <button>text shadow</button>
+            <button>text color</button>
+        </div>`
+    }
+    elGeneratorPanel.innerHTML = strHtml;
+}
+
+function addTextLine() {
+    var newLine = {line: '', size: '50px', align: 'left', color: 'red', x: 150, y: 150 }
+    gMeme.txts.push(newLine);
+    rendeGneratorPanel()
 }

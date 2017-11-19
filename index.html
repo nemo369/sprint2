@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +19,9 @@
                 <li>about</li>
             </a>
             <div class="arrow">
-                <li> <img src="img/nav-arwor.png" alt=""></li>
+                <li>
+                    <img src="img/nav-arwor.png" alt="">
+                </li>
             </div>
             <a href="#">
                 <li>blog</li>
@@ -65,30 +68,18 @@
             </canvas>
             <!-- This is the generator itself, here write the text (itsik) -->
 
-            <div class="generatorPanel">
+            <div class="generatorFueturs">
                 <button onclick="toggleCanvas(false)">X</button>
-                <select class="font" onchange="getFont(this.value)">
+                <button onclick="addTextLine()">Add Text Line</button>
+                <select class="font-change" onchange="getFont(this.value)">
                     <option value="verdana">verdana</option>
                     <option value="Segoe UI">Segoe UI</option>
                     <option value="Arial">Arial </option>
                     <option value="Times New Roman">Times New Roman</option>
-                  </select>
-                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 0)">
-                <input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, 1)">
-                <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,1)">
-                <input type="color"  id="color-picker" onchange="getColor(this.value)">
-                
-                <!-- Text Formatting buttons (itsik) -->
-
-                <div class="button-bar">
-                    <button onclick="txtDirection('center',150)">align left</button>
-                    <button>align right</button>
-                    <button>center</button>
-                    <button>text shadow</button>
-                    <button>text color</button>
-                </div>
-
+                </select>
+                <div class="generatorPanel"></div>
             </div>
+        </div>
         </div>
         <div class="imgPool">
         </div>
@@ -113,4 +104,5 @@
     <div class="footer-bottom"></div>
     <script src="js/main.js"></script>
 </body>
+
 </html>
