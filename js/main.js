@@ -17,8 +17,8 @@ var gImgs = [{ id: 0, name: 'ddd', keywords: ['happy', 'ironic', 'hat', 'purpel'
 var gMeme = {
     selectedImgId: 5, src: '',
     txts:
-        [{ idx: '0', size0: 20, align0: 'left', color0: 'red' },
-        { idx: '1', size1: 10, align1: 'center', color1: 'blue' }]
+        [{ line: '', size0: '50px', align0: 'left', color0: 'red' },
+        { line: '', size1:'50px', align1: 'center', color1: 'blue' }]
 }
 
 function init() {
@@ -45,9 +45,9 @@ function toggleCanvas(toOpen, imgId) {
 
 // updating gMeme form generatorPanel (itsik)
 
-function getTxt(insertedTxt, i) {
-    var insertedTxt = document.querySelector("#textToCanvas").value;
-    gMeme.txts[i].idx = insertedTxt;
+function getTxt(insertedTxt,i) {
+    // var insertedTxt = document.querySelector("#textToCanvas").value;
+    gMeme.txts[i].line = insertedTxt;
     drawOnCanvas() ;
 }
 
@@ -58,18 +58,28 @@ function getColor(insertedColor) {
 }
 //TODO function render gmeme to  canvas
 
-
+function getFontSize(insertedSize,i) {
+    console.log(insertedSize,i);
+    gMeme.txts[i].size1 = insertedSize+'px';
+    drawOnCanvas() ;
+}
 function drawOnCanvas() {
     img = new Image();
     img.src = gMeme.src
 
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
-        ctx.font = "50px 'Segoe UI'";
+        ctx.font = `${gMeme.txts[1].size1}  'Segoe UI'`;
         ctx.fillStyle = gMeme.txts[1].color1 ;
-        // ctx.fillStyle = 'white' ;
-        ctx.fillText(gMeme.txts[0].idx, 50, 50);
-        ctx.fillText(gMeme.txts[1].idx, 50, 300);
+        ctx.fillText(gMeme.txts[0].line, 50, 50);
+        ctx.fillText(gMeme.txts[1].line, 50, 300);
+        // gMeme.txts.forEach(function (txt,i) {
+        //     console.log(txt,idx)
+        //     ctx.font = `${gMeme.txts[idx].size1}  'Segoe UI'`;
+        //     ctx.fillStyle = gMeme.txts[idx].color1 ;
+        //     ctx.fillText(gMeme.txts[idx].idx, 50, 50);
+        //     ctx.fillText(gMeme.txts[1].idx, 50, 300);
+        // })
     };
 }
 
