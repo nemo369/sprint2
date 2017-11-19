@@ -50,7 +50,7 @@ function getTxt(insertedTxt, i) {
     gMeme.txts[i].line = insertedTxt;
     drawOnCanvas()
 }
-    function txtDirection(direction, y) {
+    function txtDirection(direction, x) {
         gMeme.txts[0].align = direction + "";
         gMeme.txts[0].y = y
         drawOnCanvas()
@@ -58,14 +58,14 @@ function getTxt(insertedTxt, i) {
 
 function getColor(insertedColor) {
     console.log(insertedColor)
-    gMeme.txts[1].color1 = insertedColor;
+    gMeme.txts[0].color = insertedColor;
     drawOnCanvas()
 }
 //TODO function render gmeme to  canvas
 
 function getFontSize(insertedSize, i) {
     console.log(insertedSize, i);
-    gMeme.txts[i].size1 = insertedSize + 'px';
+    gMeme.txts[i].size = insertedSize + 'px';
     drawOnCanvas();
 }
 function drawOnCanvas() {
@@ -75,7 +75,7 @@ function drawOnCanvas() {
     img.onload = function () {
         ctx.drawImage(img, 0, 0, 568, 360);
         ctx.font = `${gMeme.txts[1].size}  'Segoe UI'`;
-        ctx.fillStyle = gMeme.txts[1].colors;
+        ctx.fillStyle = gMeme.txts[1].color;
         ctx.fillText(gMeme.txts[0].line, gMeme.txts[0].x, gMeme.txts[0].y);
         ctx.fillText(gMeme.txts[1].line, gMeme.txts[1].x, gMeme.txts[1].y);
         // gMeme.txts.forEach(function (txt,i) {
