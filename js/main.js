@@ -2,14 +2,19 @@ console.log('2nd sprint- naamna& Itsik')
 
 var gCanvas;
 var ctx;
-var gImgs = [{ id: 0, name: 'aaa', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
-{ id: 1, name: 'dbbbdd', keywords: ['sad', 'winter', 'ironic'] },
-{ id: 2, name: 'ccc', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
-{ id: 3, name: 'ddd', keywords: ['sad', 'israel', 'happy'] },
-{ id: 4, name: 'e', keywords: ['funny', 'not sure', 'ironic'] },
-{ id: 5, name: 'ccca', keywords: ['sad', 'child', ' tell me', 'first world'] },
+var gImgs = [{ id: 0, name: 'willy wonka and the chocolate factory', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
+{ id: 1, name: 'game of thrones', keywords: ['sad', 'winter', 'ironic'] },
+{ id: 2, name: 'big lewbovski', keywords: ['sad', 'gun', 'fat', 'sunglas'] },
+{ id: 3, name: 'hardi', keywords: ['sad', 'israel', 'happy'] },
+{ id: 4, name: 'futurema', keywords: ['funny', 'not sure', 'ironic'] },
+{ id: 5, name: 'first world problems', keywords: ['sad', 'child', ' tell me', 'first world'] },
 { id: 6, name: 'zzzz', keywords: ['sad', 'israel', 'happy', 'hat'] },
 { id: 7, name: 'dzsfadd', keywords: ['sad', 'funny'] },
+{ id: 8, name: 'niga', keywords: ['sad', 'funny'] },
+{ id: 9, name: 'funny cat', keywords: ['sad', 'funny'] },
+{ id: 10, name: 'sponge bob', keywords: ['sad', 'funny'] },
+{ id: 11, name: 'win 95', keywords: ['sad', 'funny'] },
+{ id: 12, name: 'funny dog', keywords: ['sad', 'funny'] },
 ];
 // STATE!
 var gMeme = {
