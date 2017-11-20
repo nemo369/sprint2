@@ -1,12 +1,12 @@
 nav {
     background-color: var(--main-bg);
-    height: 7vw;
+    /* height: 7vw; */
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
-}
+ }
 nav ul{
+    height: 7vw;
     list-style: none;
-    /* border-bottom: 5vw; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -14,29 +14,64 @@ nav ul{
 nav ul a{
     text-decoration: none;
     color: white;
-    font-size: 1.4em;
-    padding: 1vw 3vw 3vw 0;
-    margin: 2vw;
+    padding: 2vw;
+    /* font-size: 1.4em;
+    padding: 1vw;
+    margin: 1vw; */
 }
 nav ul a:hover{
     color: var(--main-color);
+}
+
+nav img{
+    position: relative;
+    height: 9.9vw;
 }
 .nav-hr{
     color: gray;
     margin: 1vw 0 2vw 0;
 }
-.pointer{ 
-    background: white;
-    border-top:2vw solid var(--main-bg) ;
-    border-right: 3.5vw solid transparent;
-    border-left:3.5vw solid transparent;
-    /* margin: 0 auto; */
-    position: absolute;
-    right: 46%;
+
+/* MOBILE */
+.mobile,
+#nav-mobile {
+    display: none;
+    font-size: 2em;
 }
-.arrow img{
-    align-self: center;
-    padding:  2vw 0;
-    position: relative;
-    height: 5vw;
+@media (max-width: 640px) {
+  nav {
+    position: block;
+    width: 100%;
+    padding-bottom: 15vw;
+    z-index: 9999; 
+  }
+    .mobile {
+      display: block;
+  
+        color: white;
+        /* margin: 150px; */
+      }
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      height: 55vw;
+      width: 55vw;
+      position: fixed;
+      transition: all 0.4s;
+      transform: scaleX(0);
+      opacity: 0;
+      transform-origin: left; 
+      background: var(--main-bg);
+      color: white;  
+      z-index: 99;
+ 
+  }
+  nav ul img{
+      display: none;
+  }
 }
+#nav-mobile:checked  ~ ul{
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
