@@ -10,8 +10,6 @@ nav ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    /* flex: 1; */
 }
 nav ul a{
     text-decoration: none;
@@ -25,10 +23,6 @@ nav ul a:hover{
     color: var(--main-color);
 }
 
-nav img{
-    position: relative;
-    height: 9.9vw;
-}
 .nav-hr{
     color: gray;
     margin: 1vw 0 2vw 0;
@@ -38,7 +32,7 @@ nav::after{
     content: "";
         width: 0; 
         height: 0; 
-        left: 50%;
+        left: 46.1%;
         border-left: 4vw solid transparent;
         border-right: 4vw solid transparent;
         border-top: 4vw solid var(--main-bg);
@@ -47,11 +41,15 @@ nav::after{
         align-self: center;
         background-color: white;
 }
-.pointer{
- width: 4vw;
- /* border-top: 15vw solid black; */
-}
+.pointer {
+    z-index: 99;
 
+    position: absolute;
+}
+.pointer img{
+    height: 8vh;
+    padding-top: 1vw;
+}
 /* MOBILE */
 .mobile,
 #nav-mobile {

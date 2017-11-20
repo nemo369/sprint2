@@ -21,9 +21,8 @@
             <a href="#">
                 <li>about</li>
             </a>
-            <li>
-                <div class="pointer"></div>
-                <!-- <img src="img/pointer.jpg" alt=""> -->
+            <li class="pointer">
+                <img src="img/nav-arwor.png" alt="">
             </li>
             <a href="#">
                 <li>blog</li>
@@ -41,7 +40,7 @@
             <button onclick="renderPhotos(gImgs)">All Memes</button>
 
             <!-- cloud tag keyword (naaman) -->
-            <button onclick="toggleKeyWords()">Sort By Key-Words</button>
+            <button onclick="toggleKeyWords()" onfocusout="renderPhotos(gImgs)">Sort By Key-Words</button>
             <div class="keywords-cloud" hidden>
             </div>
             <input type="file" onchange="getUserImg(this.value)" accept="image/*">
