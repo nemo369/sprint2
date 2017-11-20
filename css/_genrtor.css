@@ -141,7 +141,8 @@
 	height: 22px;
     width: 70vw; 
     max-width: 450px;
-    margin: 3vh;
+    /* margin: 3vh; */
+    margin-bottom: 1vh;
     position: relative;
 }
 .generatorFueturs {
@@ -224,6 +225,9 @@
 }
 .generatorButtonPanel {
     text-align: center;
+}
+.panel {
+   width: 6vwpx;
 }
 
 /* MOBILE */

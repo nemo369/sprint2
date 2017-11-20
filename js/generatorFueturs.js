@@ -4,7 +4,8 @@ function rendeGneratorPanel() {
     var elGeneratorPanel = document.querySelector('.generatorPanel');
     var strHtml = ''
     for (var i = 0; i < gMeme.txts.length; i++) {
-        strHtml += `<div class="remove-line"><input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
+        strHtml += `<div class="panel">
+        <div class="remove-line"><input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
         <button class ="deleteRow" onclick="removeTextLine(${i})"><i class="fa fa-trash-o" aria-hidden="true"></i></button></div>
         <div class="button-bar">
             <button onclick="txtDirection('left',${i}, 20)"><i class="fa fa-align-left" aria-hidden="true"></i></button>
@@ -15,6 +16,7 @@ function rendeGneratorPanel() {
             <button onclick="textDown(10,${i})"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
             <button><input type="color"  id="color-picker" onchange="getColor(this.value,${i})"></button>
             <button>  <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,${i})"></button>
+        </div>
         </div>`
     }
     elGeneratorPanel.innerHTML = strHtml;
