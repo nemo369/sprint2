@@ -1,0 +1,11 @@
+@media  (max-width: 800px) {
+    .memeGenerator {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main {
+        margin: auto; 
+        text-align: center;       
+
+    }
+}

@@ -52,25 +52,38 @@
                 <canvas width="568" height="360" id="canvas">
                     Sorry, no canvas available
                 </canvas>
-                <!-- rendering from JS -->
-                <div class="generatorPanel"></div>
-            </div>
-    </div>
-    </section>
-    <div class="about-us-wraper">
-        <section class="about-us">
-            <img class="hex" src="img/profile-pic.jpg" alt="">
-            <div class="about-us-txt">
-                <h2> Naaman </h2>
-                <h3>
-                    Web Devlepoers
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cumque asperiores magnam sapiente reprehenderit adipisci iure,
-                    est vel error molestiae saepe aliquam eaque quod nam? Ipsa quasi illum ipsum aspernatur?
-                </p>
+                <!-- This is the generator itself, here write the text (itsik) -->
+                <div class="generatorFueturs">
+                    <div class="generatorButtonPanel">
+                    <button onclick="toggleCanvas(false)">back to menu<i class="fa fa-undo" aria-hidden="true"></i></button>
+                    <button onclick="addTextLine()">Add Text Line</button>
+                    <select class="font-change" onchange="getFont(this.value)">
+                    <option value="verdana">verdana</option>
+                    <option value="Segoe UI">Segoe UI</option>
+                    <option value="Arial">Arial </option>
+                </select>
+                    <a href="#" id="download" onclick="downloadImg(this)">
+                    <button> Download as image</button>
+                </a>
+                </div>
+                    <!-- rendering from JS -->
+                    <div class="generatorPanel"></div>
+                </div>
             </div>
         </section>
+        <div class="about-us-wraper">
+                <section class="about-us">
+                    <img class="hex" src="img/profile-pic.jpg" alt="">
+                    <div class="about-us-txt">
+                        <h2> Naaman </h2>
+                        <h3>
+                            Web Devlepoers
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cumque asperiores magnam sapiente reprehenderit adipisci iure,
+                            est vel error molestiae saepe aliquam eaque quod nam? Ipsa quasi illum ipsum aspernatur?
+                        </p>
+                        </div>
     </div>
     <footer class="mainFooter">
         <div class="textBox">
