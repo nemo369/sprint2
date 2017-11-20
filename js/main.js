@@ -33,7 +33,7 @@ function init() {
 function toggleCanvas(toOpen, imgId) {
     var elImgPool = document.querySelector('.imgPool');
     var elSearch = document.querySelector('.search')
-    var elCanvas = document.querySelector('.memeGenerator');
+    var elCanvas = document.querySelector('.main');
     if (toOpen) {
         elImgPool.style.display = 'none';
         elSearch.style.display = 'none';
@@ -106,8 +106,9 @@ function searchImg() {
 
 function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
-     var elGeneratorPanel = document.querySelector('.generatorPanel');
+     var elGeneratorPanel = document.querySelector('.main');
     elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
+    
     // genrate keywords
     var keywords = [];
     gImgs.forEach(function (img, idx) {

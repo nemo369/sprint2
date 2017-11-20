@@ -9,7 +9,9 @@
 }
 .main{
     padding:  100px, 40px;
+    display: none;
 }
+
 .imgPool {
     width: 60vw;
     display: flex;
@@ -28,8 +30,7 @@
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);    
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-canvas {
-}
+
 /* keyword cloud (naaman) */
 .search{
     display: flex;
@@ -82,8 +83,10 @@ canvas {
     flex-wrap: nowrap;
     justify-content:space-around;
     align-items: center; 
-     font-family: 'Lato', sans-serif;
-     font-weight: bold; 
+    font-family: 'Lato', sans-serif;
+    font-weight: bold; 
+    overflow:auto;
+    padding: 5%;
 
 }
 .generatorPanel button {
@@ -135,7 +138,8 @@ canvas {
 .memeGenerator {
     display: flex;
     /* flex-direction: row; */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    max-width: 580px;
 }
 #textToCanvas {
     border:2px solid #456879;
@@ -147,18 +151,18 @@ canvas {
 .generatorFueturs {
     background-color: skyblue;
 }
-.generatorButton {
+.generatorButtonPanel  {
    
     background-color: bisque;
     border: 1px solid black;
     color: white;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-     font-family: 'Lato', sans-serif; 
-     font-weight: bold;
+    font-family: 'Lato', sans-serif; 
+    font-weight: bold;
      
 }
 
@@ -172,16 +176,16 @@ canvas {
     height: 29px;
     overflow: hidden;
     width: 240px;
-     font-family: 'Lato', sans-serif;
-     font-weight: bold; 
+    font-family: 'Lato', sans-serif;
+    font-weight: bold; 
 }
 
-.generatorButton button {
+.generatorButtonPanel button {
    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     background-color: lightblue;
-    margin: 20px;
+    margin: 5px;
     max-width: 240px;
     height: 29px;
     font-family: 'Lato', sans-serif;
@@ -194,8 +198,8 @@ canvas {
 .generatorPanel input {
     width: 40px;
     background-color: cadetblue;
-     font-family: 'Lato', sans-serif;
-     font-weight: bold; 
+    font-family: 'Lato', sans-serif;
+    font-weight: bold; 
 }
 
 .button-bar button {
