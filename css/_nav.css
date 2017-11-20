@@ -5,11 +5,13 @@ nav {
     font-family: 'Lato', sans-serif;
  }
 nav ul{
-    height: 7vw;
+    height: 6vw;
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    /* flex: 1; */
 }
 nav ul a{
     text-decoration: none;
@@ -30,6 +32,24 @@ nav img{
 .nav-hr{
     color: gray;
     margin: 1vw 0 2vw 0;
+}
+
+nav::after{
+    content: "";
+        width: 0; 
+        height: 0; 
+        left: 50%;
+        border-left: 4vw solid transparent;
+        border-right: 4vw solid transparent;
+        border-top: 4vw solid var(--main-bg);
+        position: absolute;
+        text-align: center;
+        align-self: center;
+        background-color: white;
+}
+.pointer{
+ width: 4vw;
+ /* border-top: 15vw solid black; */
 }
 
 /* MOBILE */

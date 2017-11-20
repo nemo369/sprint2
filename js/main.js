@@ -63,6 +63,11 @@ function toggleCanvas(toOpen, imgId) {
 function loadImg() {
     img = new Image();
     img.src = gMeme.src
+    var height = img.height+'px'
+    var width = img.width+'px'
+    var elCanvas = document.querySelector("canvas");
+    elCanvas.style.width = width;
+    elCanvas.style.height = height;
     img.onload = drawOnCanvas()
 }
 // Main Function (itsik)

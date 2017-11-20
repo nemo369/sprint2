@@ -1,10 +1,26 @@
 .mainFooter {
+    padding: 3vw 1vw;
     background-color: var(--main-bg);
-    height: 350px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-around;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: rgb(230, 230, 230);
+}
+
+.mainFooter form{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+.get-in-touch *{
+    padding: 1vw 0;
+    margin: 1vw;
+    width: 100%;
+}
+.get-in-touch :last-child{
+   height: 7vw;
 }
 /* itsik */
 .textBox {
@@ -13,10 +29,6 @@
     padding-right: 50px;
 }
 
-h3 {
-    font-family: 'Source Sans Pro', sans-serif;
-    align-self: center;
-}
 .footer-bottom{
     background-color: var(--secondary-bg);
     height: 2vw;
@@ -26,9 +38,9 @@ h3 {
 .about-us-wraper{
     background-color: var(--main-color);
     max-height: 35vw;
+    padding-bottom: 5vw;
 }
 .about-us{
-    border: .1vw solid gray;
     background-color: var(--main-color);
     color: white;
     display: flex;
@@ -41,7 +53,34 @@ h3 {
 .about-us-txt{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: center;
-    padding: 5vw;
+    padding: 0 5vw;
+}
+.about-us-txt h2{
+    margin: 0;
+}
+.about-us-txt h3{
+    margin: 0;
+    color: var(--main-bg);
+}
+.form-box {
+    width: 50%;
+}
+.form-box button{
+    float: right;
+    background-color: var(--main-color);
+    border: none;
+    margin: 0;
+}
+.right-form-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35%;
+   
+}
+.right-form-box i{
+    color: var(--main-color);
+    padding: .8vw;
 }
