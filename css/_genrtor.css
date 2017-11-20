@@ -32,6 +32,10 @@
 .singalImg img{
   height: 100%;
 }
+.singalImg img:hover {
+   border: 2px solid black;
+   cursor: pointer;   
+}
 
 .search{
     display: flex;
@@ -51,6 +55,10 @@
     border: none;
     color: white;
     font-size: 1vw;
+}
+.search button:hover{
+  cursor: pointer;
+  outline: 1px rgb(14, 80, 63) solid;
 }
 .keywords-cloud{
     margin-top: 4vw;
@@ -76,7 +84,20 @@
     cursor: pointer;
     /* margin: 1vw; */
 }
-
+ .meme-name{
+    position: absolute;
+    padding: 7vw 0 0 1vw;
+    font-size: 1em;
+    width: 12vw;
+    height: 13vw;
+    background-color: black;
+    opacity: .7;
+    color: white;
+    display: none;
+}
+img +.meme-name:hover{
+    display: block;
+}
 .generatorPanel {
     width: 45vw;
     height: 30vw;
@@ -268,6 +289,9 @@
     .singalImg img{
         width: 100px;
         height: 100px;
+    }
+    .search button{
+        margin: .1vw;
     }
     .imgPool{
         width: 100%;

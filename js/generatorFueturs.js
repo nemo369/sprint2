@@ -66,14 +66,12 @@ function isTextShadow() {
     drawOnCanvas()
 }
 
-function getColor(insertedColor) {
-    console.log(insertedColor)
-    gMeme.txts[1].color = insertedColor;
+function getColor(insertedColor,i) {
+    gMeme.txts[i].color = insertedColor;
     drawOnCanvas()
 }
 
 function getFontSize(insertedSize, i) {
-    console.log(insertedSize, i);
     gMeme.txts[i].size = insertedSize + 'px';
     drawOnCanvas();
 }
