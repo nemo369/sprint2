@@ -67,33 +67,11 @@ function toggleCanvas(toOpen, imgId) {
 }
 function loadImg() {
     img = new Image();
-<<<<<<< HEAD
-    img.src = gMeme.src
-    var height = img.height + 'px'
-    var width = img.width + 'px'
-    var elCanvas = document.querySelector("canvas");
-    elCanvas.style.width = width;
-    elCanvas.style.height = height;
-=======
     img.src = gMeme.src;
->>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
     img.onload = drawOnCanvas()
 }
 // Main Function (itsik)
 function drawOnCanvas() {
-<<<<<<< HEAD
-    ctx.drawImage(img, 0, 0, 568, 360);
-    gMeme.txts.forEach(function (txt, i) {
-        ctx.font = `${txt.size}  ${gMeme.font}`;
-        ctx.fillStyle = txt.color;
-        ctx.fillText(txt.line, txt.x, txt.y);
-        ctx.fillText(txt.line, txt.x, txt.y);
-        if (gMeme.txts[i].shadow) {
-            ctx.shadowColor = "black";
-            ctx.shadowOffsetX = 20;
-            ctx.shadowOffsetY = 20;
-            ctx.shadowBlur = 10;
-=======
     var hRatio = canvas.width / img.width    ;
     var vRatio = canvas.height / img.height  ;
     var ratio  = Math.min ( hRatio, vRatio );
@@ -111,12 +89,7 @@ function drawOnCanvas() {
             }
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
->>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
             console.log(gMeme)
-        }
-        ctx.fillText(txt.line, txt.x, txt.y);
-        ctx.fillText(txt.line, txt.x, txt.y);
-        console.log(gMeme)
     })
 }
 
