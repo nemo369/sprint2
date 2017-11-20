@@ -60,6 +60,8 @@ function toggleCanvas(toOpen, imgId) {
         rendeGneratorPanel()
     }
 }
+var img;
+
 function loadImg() {
     img = new Image();
     img.src = gMeme.src;
@@ -72,6 +74,7 @@ function drawOnCanvas() {
     var ratio  = Math.min ( hRatio, vRatio );
     ctx.drawImage(img, 0,0, img.width, img.height, 0,0,img.width*ratio, img.height*ratio)
         gMeme.txts.forEach(function (txt, i) {
+
             ctx.font = `${txt.size}  ${gMeme.font}`;
             ctx.fillStyle = txt.color;
             ctx.fillText(txt.line, txt.x, txt.y);
