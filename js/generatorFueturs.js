@@ -10,8 +10,8 @@ function rendeGneratorPanel() {
             <button onclick="txtDirection('right',${i},400)"><i class="fa fa-align-right" aria-hidden="true"></i></button>
             <button onclick="txtDirection('center',${i}, 230)"><i class="fa fa-align-center" aria-hidden="true"></i></button>
             <button onclick="isTextShadow()" class="shadow">shadow</button>
-            <button onclick="textUp(10,0)" ><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-            <button onclick="textDown(10,0)"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+            <button onclick="textUp(10,${i})" ><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+            <button onclick="textDown(10,${i})"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
             <button><input type="color"  id="color-picker" onchange="getColor(this.value,${i})"></button>
             <button>  <input type="number" value="50" id="font-size" name="t" placeholder="font size" onchange="getFontSize(this.value,${i})"></button>
         </div>`
