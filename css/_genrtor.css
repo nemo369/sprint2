@@ -79,12 +79,12 @@
 
 .generatorPanel {
     width: 45vw;
-    height: 35vw;
+    height: 30vw;
     display: flex;  
     flex-direction: column; 
     flex-wrap: nowrap;
     justify-content:space-around;
-    align-items: center; 
+    /* align-items: center;  */
     font-family: 'Lato', sans-serif;
     font-weight: bold; 
     overflow:auto;
@@ -95,7 +95,7 @@
     background-color: var(--main-color);
     border: 1px solid black;
     color: white;
-    padding: 20px;
+    padding: 5%;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
@@ -104,10 +104,10 @@
     float: left; 
     max-height: 50px;
     box-sizing: border-box; 
-     display: flex;
+    display: flex;
     justify-content: center;
-     font-family: 'Lato', sans-serif;
-     font-weight: bold;  
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;  
 
 }
 .generatorPanel input {
@@ -116,6 +116,9 @@
   align-self: center;
    font-family: 'Lato', sans-serif; 
    font-weight: bold;
+}
+#canvas {
+    margin: auto;
 }
 
 .font-change{
@@ -131,8 +134,8 @@
     text-align: center;
     display: flex;
     justify-content: center;
-     font-family: 'Lato', sans-serif; 
-     font-weight: bold;
+    font-family: 'Lato', sans-serif; 
+    font-weight: bold;
 }
 .memeGenerator {
     display: flex;
@@ -146,9 +149,10 @@
     color: black;
 	border-radius:10px;
 	height: 22px;
-    width: 450px; 
+    width: 70vw; 
     max-width: 450px;
-    margin-bottom: 15px;
+    /* margin: 3vh; */
+    margin-bottom: 1vh;
     position: relative;
 }
 .generatorFueturs {
@@ -206,7 +210,12 @@
 
 .button-bar button {
       box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-
+      width: 12%; 
+      height: 15%; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4%;
 } 
 .button-bar button:hover {
      background-color:  bisque;
@@ -220,11 +229,15 @@
     padding: 1vw;
     margin: 1vw;
     font-size: .7em;
-    /* height: 1vw; */
-    display: inline;
+    height: 5%; 
+    display: inline ;
+    margin: auto;
 }
 .generatorButtonPanel {
     text-align: center;
+}
+.panel {
+   width: 6vwpx;
 }
 
 /* MOBILE */
@@ -239,8 +252,8 @@
         margin: 0 auto;
     }
     .singalImg img{
-        width: 20vw;
-        height: 20vw;
+        width: 100px;
+        height: 100px;
     }
     .imgPool{
         width: 100%;
@@ -257,4 +270,22 @@
         flex-wrap: wrap;
         z-index: 1;
     }
+    .memeGenerator {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .generatorPanel {
+        display: flex;
+        flex-wrap: wrap; 
+        width: 80%;
+        height:auto;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+    .button-bar {
+        flex-wrap: wrap; 
+    }
 }
+
