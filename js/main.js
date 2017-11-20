@@ -86,6 +86,7 @@ function drawOnCanvas() {
             }
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
+            console.log(gMeme)
         })
 }
 
