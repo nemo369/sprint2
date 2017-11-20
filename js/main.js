@@ -30,7 +30,7 @@ function init() {
     gCanvas = document.getElementById('canvas');
     ctx = gCanvas.getContext('2d');
     rendeGneratorPanel();
-    renderPhotos(gImgs)
+    renderPhotos(gImgs);
 }
 // toggle canvas
 function toggleCanvas(toOpen, imgId) {
@@ -95,7 +95,9 @@ function renderPhotos(imgs) {
     var strHtmls = imgs.map(function (img, idx) {
         return `
             <div class="singalImg flex" onclick="toggleCanvas(true, ${img.id})">
-            <img src="img/memes/${img.id}-meme.jpg" alt=""></div> 
+            <p class="meme-name">${img.name}</p>
+            <img src="img/memes/${img.id}-meme.jpg" alt="">
+            </div> 
         `
     });
     elImgPool.innerHTML = strHtmls.join('')
@@ -169,5 +171,5 @@ function getUserImg(userImg) {
     var elCanvas = document.querySelector(".memeGenerator");
     elImgPool.style.display = 'none';
     elCanvas.style.display = 'flex';
-    loadImg()
+   drawOnCanvas()
 }
