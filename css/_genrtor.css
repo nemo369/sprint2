@@ -225,7 +225,7 @@
 @media (max-width: 640px) {
     .search{
         justify-content: center;
-        margin: -1vw auto;
+        margin: 1vw auto;
     }
     .search input{
         width: 60%;
