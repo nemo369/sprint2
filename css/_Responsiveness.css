@@ -1,4 +1,4 @@
-@media  (max-width: 800px) {
+@media  (width: 600px) {
     .memeGenerator {
         display: flex;
         flex-wrap: wrap;
@@ -6,6 +6,9 @@
     .main {
         margin: auto; 
         text-align: center;       
-
+    }
+    .generatorPanel {
+        display: flex;
+        flex-wrap: wrap;   
     }
 }

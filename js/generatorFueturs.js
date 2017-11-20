@@ -5,7 +5,7 @@ function rendeGneratorPanel() {
     var strHtml = ''
     for (var i = 0; i < gMeme.txts.length; i++) {
         strHtml += `<div class="remove-line"><input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
-        <button onclick="removeTextLine(${i})">X</button></div>
+        <button class ="deleteRow" onclick="removeTextLine(${i})"><i class="fa fa-trash-o" aria-hidden="true"></i></button></div>
         <div class="button-bar">
             <button onclick="txtDirection('left',${i}, 20)"><i class="fa fa-align-left" aria-hidden="true"></i></button>
             <button onclick="txtDirection('right',${i},400)"><i class="fa fa-align-right" aria-hidden="true"></i></button>

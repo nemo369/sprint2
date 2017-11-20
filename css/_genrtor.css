@@ -7,6 +7,8 @@
 .main{
     padding:  70vw, 25vw;
     display: none;
+    flex-direction: row;
+    align-self: center;
 }
 
 .imgPool {
@@ -67,8 +69,8 @@
 }
 
 .generatorPanel {
-    width: 550px;
-    height: 250px;
+    width: 45vw;
+    height: 35vw;
     display: flex;  
     flex-direction: column; 
     flex-wrap: nowrap;
@@ -126,7 +128,7 @@
 .memeGenerator {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 #textToCanvas {
     border:2px solid #456879;
@@ -207,7 +209,10 @@
     background: red;
     padding: 1vw;
     margin: 1vw;
-    font-size: .5em;
-    height: 1vw;
+    font-size: .7em;
+    /* height: 1vw; */
     display: inline;
+}
+.generatorButtonPanel {
+    text-align: center;
 }
