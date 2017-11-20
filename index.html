@@ -32,70 +32,72 @@
             </a>
         </ul>
     </nav>
-    <div class="pointer"></div>
-    <hr class="nav-hr">
-    <!-- search line -->
-    <div class="search">
-        <input onkeyup="searchImg()" onfocusout="renderPhotos(gImgs)" type="search" id="mySearch" name="q" placeholder="Search for memes...">
-        <button onclick="renderPhotos(gImgs)">All Memes</button>
+    <div class="container">
+        <div class="pointer"></div>
+        <hr class="nav-hr">
+        <!-- search line -->
+        <div class="search">
+            <input onkeyup="searchImg()" onfocusout="renderPhotos(gImgs)" type="search" id="mySearch" name="q" placeholder="Search for memes...">
+            <button onclick="renderPhotos(gImgs)">All Memes</button>
 
-        <!-- cloud tag keyword (naaman) -->
-        <button onclick="toggleKeyWords()">Sort By Key-Words</button>
-        <div class="keywords-cloud" hidden>
+            <!-- cloud tag keyword (naaman) -->
+            <button onclick="toggleKeyWords()">Sort By Key-Words</button>
+            <div class="keywords-cloud" hidden>
+            </div>
+            <input type="file" onchange="getUserImg(this.value)" accept="image/*">
         </div>
-        <input type="file" onchange="getUserImg(this.value)" accept="image/*">
-    </div>
-    <div class="imgPool">
-    </div>
+        <div class="imgPool">
+        </div>
 
-    <section class="main">
-        <div class="memeGenerator">
-            <canvas width="568" height="360" id="canvas">
-                Sorry, no canvas available
-            </canvas>
-            <!-- This is the generator itself, here write the text (itsik) -->
-            <div class="generatorFueturs">
-                <button onclick="toggleCanvas(false)">X</button>
-                <button onclick="addTextLine()">Add Text Line</button>
-                <select class="font-change" onchange="getFont(this.value)">
+        <section class="main">
+            <div class="memeGenerator">
+                <canvas width="568" height="360" id="canvas">
+                    Sorry, no canvas available
+                </canvas>
+                <!-- This is the generator itself, here write the text (itsik) -->
+                <div class="generatorFueturs">
+                    <div class="generatorButton">
+                    <button onclick="toggleCanvas(false)">back to menu<i class="fa fa-undo" aria-hidden="true"></i></button>
+                    <button onclick="addTextLine()">Add Text Line</button>
+                    <select class="font-change" onchange="getFont(this.value)">
                     <option value="verdana">verdana</option>
                     <option value="Segoe UI">Segoe UI</option>
                     <option value="Arial">Arial </option>
                 </select>
-                <a href="#" id="download" onclick="downloadImg(this)">
+                    <a href="#" id="download" onclick="downloadImg(this)">
                     <button> Download as image</button>
                 </a>
-                <!-- rendering from JS -->
-                <div class="generatorPanel"></div>
+                </div>
+                    <!-- rendering from JS -->
+                    <div class="generatorPanel"></div>
+                </div>
             </div>
+        </section>
+        <div class="about-us-wraper">
+            <section class="about-us">
+                <img class="hex" src="img/profile-pic.jpg" alt="">
+                <div class="about-us-txt">
+                    <h2> Naaman </h2>
+                    <h3>
+                        Web Devlepoers
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cumque asperiores magnam sapiente reprehenderit adipisci iure,
+                        est vel error molestiae saepe aliquam eaque quod nam? Ipsa quasi illum ipsum aspernatur?
+                    </p>
+                </div>
+            </section>
         </div>
-    </section>
-<div class="about-us-wraper">
-    <section class="about-us">
-        <img class="hex" src="img/profile-pic.jpg" alt="">
-        <div class="about-us-txt">
-        <h2> Naaman       </h2>
-        <h3>
-            Web Devlepoers
-        </h3>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Hic cumque asperiores magnam sapiente reprehenderit adipisci
-             iure, est vel error molestiae saepe aliquam eaque quod nam?
-              Ipsa quasi illum ipsum aspernatur?
-        </p>
-        </div>
-    </section>
-</div>
-    <footer class="mainFooter">
-        <div class="textBox">
-            <h3>about</h3>
-            <p>Gin is a spirit which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest
-                origins in the Middle Ages, gin has evolved from use in herbal medicine to an object of commerce in the spirits
-                industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly
-                in London) when William of Orange, leader of the Dutch Republic, </p>
-        </div>
-    </footer>
+        <footer class="mainFooter">
+            <div class="textBox">
+                <h3>about</h3>
+                <p>Gin is a spirit which derives its predominant flavour from juniper berries (Juniperus communis). From its
+                    earliest origins in the Middle Ages, gin has evolved from use in herbal medicine to an object of commerce
+                    in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great
+                    Britain (particularly in London) when William of Orange, leader of the Dutch Republic, </p>
+            </div>
+        </footer>
+    </div>
     <div class="footer-bottom">© Copyright 2017 Nemo & Itzik</div>
     <script src="js/generatorFueturs.js"></script>
     <script src="js/main.js"></script>

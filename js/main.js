@@ -106,6 +106,7 @@ function searchImg() {
 
 function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
+     var elGeneratorPanel = document.querySelector('.generatorPanel');
     elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
     // genrate keywords
     var keywords = [];

@@ -40,13 +40,13 @@ canvas {
     width: 100%;
     
 }
-.search button{
+/* .search button{
     background-color: var(--main-color);
     padding: 1em;
     border: none;
     color: white;
     font-size: 1vw;
-}
+} */
 .keywords-cloud{
     margin-top: 4vw;
     display: flex;
@@ -73,18 +73,19 @@ canvas {
 
  /* itsik  */
 .generatorPanel {
-    width: 600px;
-    height: 400px;
-    background-color: brown;
-    display: flex; 
+    width: 550px;
+    height: 250px;
+    display: flex;  
     flex-direction: column; 
     flex-wrap: nowrap;
-    justify-content:space-between;
-    align-items: center;
+    justify-content:space-around;
+    align-items: center; 
+     font-family: 'Lato', sans-serif;
+     font-weight: bold; 
 
 }
 .generatorPanel button {
-    background-color: gainsboro;
+    background-color: burlywood;
     border: 1px solid black;
     color: white;
     padding: 20px;
@@ -93,12 +94,21 @@ canvas {
     font-size: 16px;
     cursor: pointer;
     max-width: 80px; 
-    float: left;    
+    float: left; 
+    max-height: 50px;
+    box-sizing: border-box; 
+     display: flex;
+    justify-content: center;
+     font-family: 'Lato', sans-serif;
+     font-weight: bold;  
+
 }
 .generatorPanel input {
   color: blue;
   max-width: 150px;
   align-self: center;
+   font-family: 'Lato', sans-serif; 
+   font-weight: bold;
 }
 
 #textToCanvas{
@@ -107,6 +117,8 @@ canvas {
 .font-change{
     min-height: 2em;
     max-width: 10em;
+     font-family: 'Lato', sans-serif;
+     font-weight: bold; 
 }
 
 .shadow {
@@ -115,9 +127,79 @@ canvas {
     text-align: center;
     display: flex;
     justify-content: center;
+     font-family: 'Lato', sans-serif; 
+     font-weight: bold;
 }
 .memeGenerator {
     display: flex;
     /* flex-direction: row; */
     flex-wrap: wrap;
 }
+#textToCanvas {
+    border:2px solid #456879;
+	border-radius:10px;
+	height: 22px;
+    width: 450px; 
+    max-width: 450px;
+}
+.generatorFueturs {
+    background-color: skyblue;
+}
+.generatorButton {
+   
+    background-color: bisque;
+    border: 1px solid black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+     font-family: 'Lato', sans-serif; 
+     font-weight: bold;
+     
+}
+
+.font-change  {
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+    margin: 20px;
+    height: 29px;
+    overflow: hidden;
+    width: 240px;
+     font-family: 'Lato', sans-serif;
+     font-weight: bold; 
+}
+
+.generatorButton button {
+   -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+    margin: 20px;
+    max-width: 240px;
+    height: 29px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold; 
+    
+}
+.generatorButton button:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.generatorPanel input {
+    width: 40px;
+    background-color: cadetblue;
+     font-family: 'Lato', sans-serif;
+     font-weight: bold; 
+}
+
+.button-bar button {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+} 
+.button-bar button:hover {
+     background-color: #27ae60;
+}    
