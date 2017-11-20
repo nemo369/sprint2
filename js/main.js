@@ -122,13 +122,6 @@ function toggleKeyWords() {
         !keywordCount[word]?  keywordCount[word] = 1: keywordCount[word]++
     }
     // render keywords
-    console.log(keywordCount)
-    // var strHtmls = keywords.map(function (keyword, idx) {
-    //     return `
-    //         <div class="key-word" onclick="renderByKeyword('${keyword}')">
-    //          ${keyword} </div> 
-    //     `
-    // });
     var strHtmls = '';
     for (word in keywordCount){
         strHtmls += `<div class="key-word" onclick="renderByKeyword('${word}')">
