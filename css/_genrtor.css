@@ -95,7 +95,9 @@
     color: white;
     display: none;
 }
-
+img +.meme-name:hover{
+    display: block;
+}
 .generatorPanel {
     width: 45vw;
     height: 30vw;
