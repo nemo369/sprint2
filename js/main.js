@@ -22,13 +22,8 @@ var gMeme = {
     src: '',
     font: 'Segoe UI',
     txts:
-<<<<<<< HEAD
-    [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-    { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
-=======
-        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-        { line: '', size: '50px', align: 'center', color: 'blue', x: 50, y: 250, shadow: false }]
->>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
+    [{ line: '', size: '70px', align: 'left', color: 'white', x: 50, y: 50, shadow: false },
+    { line: '', size: '70px', align: 'center', color: 'white', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
