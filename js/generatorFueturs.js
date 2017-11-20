@@ -11,7 +11,7 @@ function rendeGneratorPanel() {
             <button onclick="txtDirection('left',${i}, 20)"><i class="fa fa-align-left" aria-hidden="true"></i></button>
             <button onclick="txtDirection('right',${i},400)"><i class="fa fa-align-right" aria-hidden="true"></i></button>
             <button onclick="txtDirection('center',${i}, 230)"><i class="fa fa-align-center" aria-hidden="true"></i></button>
-            <button onclick="isTextShadow()" class="shadow">shadow</button>
+            <button onclick="isTextShadow(${i})" class="shadow">shadow</button>
             <button onclick="textUp(10,${i})" ><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             <button onclick="textDown(10,${i})"><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
             <button><input type="color"  id="color-picker" onchange="getColor(this.value,${i})"></button>
@@ -57,7 +57,7 @@ function textUp(y, idx) {
     drawOnCanvas()
 }
 
-function isTextShadow() {
+function isTextShadow(idx) {
     if (gMeme.txts[idx].shadow) {
         gMeme.txts[idx].shadow = false;
     } else {

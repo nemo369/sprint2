@@ -43,11 +43,10 @@
             <button onclick="toggleKeyWords()" onfocusout="renderPhotos(gImgs)">Sort By Key-Words</button>
             <div class="keywords-cloud" hidden>
             </div>
-            <input type="file" onchange="getUserImg(this.value)" accept="image/*" name="fileupload" >
+            <input type="file"  accept="image/*" name="fileupload"  onchange="uploadImage()">
         </div>
         <div class="imgPool">
         </div>
-
         <section class="main">
             <div class="memeGenerator" hidden>
                 <canvas width="600" height="300" id="canvas">
@@ -122,7 +121,9 @@
     </div>
     </footer>
     </div>
+
     <div class="footer-bottom">© Copyright 2017 Nemo & Itzik</div>
+      <script src="lib/jquery.js"></script>
     <script src="js/generatorFueturs.js"></script>
     <script src="js/main.js"></script>
 </body>

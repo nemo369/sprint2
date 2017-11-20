@@ -22,8 +22,8 @@ var gMeme = {
     src: '',
     font: 'Segoe UI',
     txts:
-        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
+    [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+    { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
@@ -63,8 +63,8 @@ function toggleCanvas(toOpen, imgId) {
 function loadImg() {
     img = new Image();
     img.src = gMeme.src
-    var height = img.height+'px'
-    var width = img.width+'px'
+    var height = img.height + 'px'
+    var width = img.width + 'px'
     var elCanvas = document.querySelector("canvas");
     elCanvas.style.width = width;
     elCanvas.style.height = height;
@@ -72,22 +72,23 @@ function loadImg() {
 }
 // Main Function (itsik)
 function drawOnCanvas() {
-        ctx.drawImage(img, 0, 0, 568, 360);
-        gMeme.txts.forEach(function (txt, i) {
-            ctx.font = `${txt.size}  ${gMeme.font}`;
-            ctx.fillStyle = txt.color;
-            ctx.fillText(txt.line, txt.x, txt.y);
-            ctx.fillText(txt.line, txt.x, txt.y);
-            if (txt.shadow) {
-                ctx.shadowColor = "black";
-                ctx.shadowOffsetX = 40;
-                ctx.shadowOffsetY = 40;
-                ctx.shadowBlur = 20;
-            }
-            ctx.fillText(txt.line, txt.x, txt.y);
-            ctx.fillText(txt.line, txt.x, txt.y);
+    ctx.drawImage(img, 0, 0, 568, 360);
+    gMeme.txts.forEach(function (txt, i) {
+        ctx.font = `${txt.size}  ${gMeme.font}`;
+        ctx.fillStyle = txt.color;
+        ctx.fillText(txt.line, txt.x, txt.y);
+        ctx.fillText(txt.line, txt.x, txt.y);
+        if (gMeme.txts[i].shadow) {
+            ctx.shadowColor = "black";
+            ctx.shadowOffsetX = 20;
+            ctx.shadowOffsetY = 20;
+            ctx.shadowBlur = 10;
             console.log(gMeme)
-        })
+        }
+        ctx.fillText(txt.line, txt.x, txt.y);
+        ctx.fillText(txt.line, txt.x, txt.y);
+        console.log(gMeme)
+    })
 }
 
 function renderPhotos(imgs) {
@@ -107,9 +108,9 @@ function renderPhotos(imgs) {
 function searchImg() {
     var searchTxt = document.querySelector('#mySearch').value;
     var sortedImgs = [];
-    gImgs.forEach(function (img,i) {
+    gImgs.forEach(function (img, i) {
         if (img.name.includes(searchTxt)) {
-            sortedImgs.push(img) 
+            sortedImgs.push(img)
         }
     });
     renderPhotos(sortedImgs)
@@ -119,7 +120,7 @@ function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
     var elGeneratorPanel = document.querySelector('.main');
     elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
-    
+
     // genrate keywords
     var keywords = [];
     gImgs.forEach(function (img, idx) {
@@ -131,14 +132,14 @@ function toggleKeyWords() {
     var keywordCount = {}
     for (var i = 0; i < keywords.length; i++) {
         var word = keywords[i];
-        !keywordCount[word]?  keywordCount[word] = 1: keywordCount[word]++
+        !keywordCount[word] ? keywordCount[word] = 1 : keywordCount[word]++
     }
     // render keywords
     var strHtmls = '';
-    for (word in keywordCount){
+    for (word in keywordCount) {
         strHtmls += `<div class="key-word" onclick="renderByKeyword('${word}')">
        <span style="font-size:${keywordCount[word]}em"> ${word} </span> </div> `
-       console.log(keywordCount[word])
+        console.log(keywordCount[word])
     }
     // elCloud.innerHTML = strHtmls.join('');
     elCloud.innerHTML = strHtmls
@@ -163,14 +164,60 @@ function downloadImg(elLink) {
     elLink.download = 'perfectMeme.jpg';
 }
 
-function getUserImg(userImg) {
-    console.log(userImg)
-    gMeme.selectedImgId = 'userUpload',
-    gMeme.src = userImg;
-    //toggle img Pool
-    var elImgPool = document.querySelector(".imgPool");
-    var elCanvas = document.querySelector(".memeGenerator");
-    elImgPool.style.display = 'none';
-    elCanvas.style.display = 'flex';
-   drawOnCanvas()
+// function getUserImg(userImg) {
+//     console.log(userImg)
+//     gMeme.selectedImgId = 'userUpload',
+//     gMeme.src = userImg;
+//     //toggle img Pool
+//     var elImgPool = document.querySelector(".imgPool");
+//     var elCanvas = document.querySelector(".memeGenerator");
+//     elImgPool.style.display = 'none';
+//     elCanvas.style.display = 'flex';
+//    drawOnCanvas()
+// }
+
+
+function uploadImage() {
+
+    var file = event.srcElement.files[0];
+    console.log('elad')
+    var img = document.createElement("img");
+    var reader = new FileReader();
+    reader.onloadend = function () {
+        console.log(reader.result)
+        img.src = reader.result;
+        
+    }
+    reader.readAsDataURL(file);
+    img.onload = toggleCanvas(true, reader.result ) 
 }
+
+
+function togglesrc(toOpen ,img) {
+    var elImgPool = document.querySelector('.imgPool');
+    var elSearch = document.querySelector('.search')
+    var elCanvas = document.querySelector('.main');
+    if (toOpen) {
+        elImgPool.style.display = 'none';
+        elSearch.style.display = 'none';
+        elCanvas.style.display = 'flex';
+        gMeme.selectedImgId = imgId;
+        gMeme.src = img.src
+        loadImg()
+    } else {
+        elImgPool.style.display = 'flex';
+        elCanvas.style.display = 'none';
+        elSearch.style.display = 'flex';
+        gMeme = {
+            selectedImgId: 5,
+            src: '',
+            font: 'Segoe UI',
+            txts: [
+                { line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+                { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }
+            ]
+        };
+        rendeGneratorPanel()
+    }
+}
+
