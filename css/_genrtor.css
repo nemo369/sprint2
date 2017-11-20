@@ -130,9 +130,6 @@
     flex-direction: row;
     /* flex-wrap: wrap; */
 }
-#canvas{
-    margin: auto;
-}
 #textToCanvas {
     border:2px solid #456879;
     background: bisque;

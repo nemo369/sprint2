@@ -30,6 +30,7 @@ function removeTextLine(idx) {
     console.log(gMeme.txts[idx])
     gMeme.txts.splice(idx, 1)
     rendeGneratorPanel()
+    drawOnCanvas()
 }
 
 ///functions for stylish the txt on the meme photo
