@@ -22,8 +22,8 @@ var gMeme = {
     src: '',
     font: 'Segoe UI',
     txts:
-    [{ line: '', size: '70px', align: 'left', color: 'white', x: 50, y: 50, shadow: false },
-    { line: '', size: '70px', align: 'center', color: 'white', x: 250, y: 250, shadow: false }]
+        [{ line: '', size: '70px', align: 'left', color: 'white', x: 50, y: 50, shadow: false },
+        { line: '', size: '70px', align: 'center', color: 'white', x: 250, y: 250, shadow: false }]
 }
 
 function init() {
@@ -60,19 +60,19 @@ function toggleCanvas(toOpen, imgId) {
         rendeGneratorPanel()
     }
 }
-var img;
 
 function loadImg() {
-    img = new Image();
-    img.src = gMeme.src;
-    img.onload = drawOnCanvas()
+    drawOnCanvas()
 }
 // Main Function (itsik)
 function drawOnCanvas() {
-    var hRatio = canvas.width / img.width    ;
-    var vRatio = canvas.height / img.height  ;
-    var ratio  = Math.min ( hRatio, vRatio );
-    ctx.drawImage(img, 0,0, img.width, img.height, 0,0,img.width*ratio, img.height*ratio)
+    img = new Image();
+    img.src = gMeme.src;
+    img.onload = function () {
+        var hRatio = canvas.width / img.width;
+        var vRatio = canvas.height / img.height;
+        var ratio = Math.min(hRatio, vRatio);
+        ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, img.width * ratio, img.height * ratio)
         gMeme.txts.forEach(function (txt, i) {
 
             ctx.font = `${txt.size}  ${gMeme.font}`;
@@ -88,7 +88,8 @@ function drawOnCanvas() {
             ctx.fillText(txt.line, txt.x, txt.y);
             ctx.fillText(txt.line, txt.x, txt.y);
             console.log(gMeme)
-    })
+        })
+    }
 }
 
 function renderPhotos(imgs) {
@@ -186,14 +187,14 @@ function uploadImage() {
     reader.onloadend = function () {
         console.log(reader.result)
         img.src = reader.result;
-        
+
     }
     reader.readAsDataURL(file);
-    img.onload = toggleCanvas(true, reader.result ) 
+    img.onload = toggleCanvas(true, reader.result)
 }
 
 
-function togglesrc(toOpen ,img) {
+function togglesrc(toOpen, img) {
     var elImgPool = document.querySelector('.imgPool');
     var elSearch = document.querySelector('.search')
     var elCanvas = document.querySelector('.main');
