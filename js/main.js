@@ -114,7 +114,7 @@ function searchImg() {
 
 function toggleKeyWords() {
     var elCloud = document.querySelector('.keywords-cloud');
-     var elGeneratorPanel = document.querySelector('.main');
+    var elGeneratorPanel = document.querySelector('.main');
     elCloud.style.display = elCloud.style.display === 'flex' ? 'none' : 'flex';
     
     // genrate keywords
@@ -169,5 +169,5 @@ function getUserImg(userImg) {
     var elCanvas = document.querySelector(".memeGenerator");
     elImgPool.style.display = 'none';
     elCanvas.style.display = 'flex';
-    drawOnCanvas()
+    loadImg()
 }
