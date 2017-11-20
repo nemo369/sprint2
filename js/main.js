@@ -23,7 +23,7 @@ var gMeme = {
     font: 'Segoe UI',
     txts:
         [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
-        { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
+        { line: '', size: '50px', align: 'center', color: 'blue', x: 50, y: 250, shadow: false }]
 }
 
 function init() {
@@ -40,7 +40,7 @@ function toggleCanvas(toOpen, imgId) {
     if (toOpen) {
         elImgPool.style.display = 'none';
         elSearch.style.display = 'none';
-        elCanvas.style.display = 'flex';
+        elCanvas.style.display = 'block';
         gMeme.selectedImgId = imgId;
         gMeme.src = `../img/memes/${imgId}-meme.jpg`
         loadImg()
@@ -62,17 +62,15 @@ function toggleCanvas(toOpen, imgId) {
 }
 function loadImg() {
     img = new Image();
-    img.src = gMeme.src
-    var height = img.height+'px'
-    var width = img.width+'px'
-    var elCanvas = document.querySelector("canvas");
-    elCanvas.style.width = width;
-    elCanvas.style.height = height;
+    img.src = gMeme.src;
     img.onload = drawOnCanvas()
 }
 // Main Function (itsik)
 function drawOnCanvas() {
-        ctx.drawImage(img, 0, 0, 568, 360);
+    var hRatio = canvas.width / img.width    ;
+    var vRatio = canvas.height / img.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+    ctx.drawImage(img, 0,0, img.width, img.height, 0,0,img.width*ratio, img.height*ratio)
         gMeme.txts.forEach(function (txt, i) {
             ctx.font = `${txt.size}  ${gMeme.font}`;
             ctx.fillStyle = txt.color;
