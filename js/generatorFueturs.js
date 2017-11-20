@@ -4,7 +4,8 @@ function rendeGneratorPanel() {
     var elGeneratorPanel = document.querySelector('.generatorPanel');
     var strHtml = ''
     for (var i = 0; i < gMeme.txts.length; i++) {
-        strHtml += `<input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
+        strHtml += `<div class="remove-line"><input type="text" id="textToCanvas" name="t" placeholder="Insert meme" onkeyup="getTxt(this.value, ${i})">
+        <button onclick="removeTextLine(${i})">X</button></div>
         <div class="button-bar">
             <button onclick="txtDirection('left',${i}, 20)"><i class="fa fa-align-left" aria-hidden="true"></i></button>
             <button onclick="txtDirection('right',${i},400)"><i class="fa fa-align-right" aria-hidden="true"></i></button>
@@ -17,11 +18,17 @@ function rendeGneratorPanel() {
         </div>`
     }
     elGeneratorPanel.innerHTML = strHtml;
-} 
+}
 
 function addTextLine() {
     var newLine = { line: '', size: '50px', align: 'left', color: 'red', x: 150, y: 150 }
     gMeme.txts.push(newLine);
+    rendeGneratorPanel()
+}
+
+function removeTextLine(idx) {
+    console.log(gMeme.txts[idx])
+    gMeme.txts.splice(idx, 1)
     rendeGneratorPanel()
 }
 

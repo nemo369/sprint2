@@ -2,8 +2,6 @@ console.log('2nd sprint- naamna& Itsik')
 
 var gCanvas;
 var ctx;
-// TODO add url .
-// TODO function addIMG
 var gImgs = [{ id: 0, name: 'aaa', keywords: ['happy', 'ironic', 'hat', 'purpel'] },
 { id: 1, name: 'dbbbdd', keywords: ['sad', 'winter', 'ironic'] },
 { id: 2, name: 'ccc', keywords: ['sad', 'gun', 'fat', 'sunglas'] },

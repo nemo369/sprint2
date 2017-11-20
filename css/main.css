@@ -70,13 +70,7 @@ html, body{
     display: flex;
     flex-direction: column;
 } 
-.search {
-    display: flex;
-    margin: auto;
-    max-width: 800px;
-    justify-content: space-around;
-    text-align: center;
-    font-weight: bold;
-}
+
+
 
 
