@@ -24,9 +24,9 @@
 }
 /* itsik */
 .textBox {
-    width: 400px;
-    height: 150px;
-    padding-right: 50px;
+    width: 70vw;
+    height: 50vh;
+    padding-right: 30w;
 }
 
 .footer-bottom{
@@ -83,4 +83,27 @@
 .right-form-box i{
     color: var(--main-color);
     padding: .8vw;
+}
+
+/* MOBILE */
+
+@media (max-width: 910px) {
+    .about-us{
+        display: block;
+        /* height: 55vw; */
+        overflow: hidden;
+    }
+    .about-us-txt{
+        display: block;
+        height: 50vw;
+    }
+    .mainFooter{
+        display: none;
+    }
+    .mainFooter form{
+        display: none;
+    }
+    .footer-bottom{
+        display: none;
+    }
 }

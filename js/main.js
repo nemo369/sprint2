@@ -22,8 +22,13 @@ var gMeme = {
     src: '',
     font: 'Segoe UI',
     txts:
+<<<<<<< HEAD
     [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
     { line: '', size: '50px', align: 'center', color: 'blue', x: 250, y: 250, shadow: false }]
+=======
+        [{ line: '', size: '50px', align: 'left', color: 'red', x: 50, y: 50, shadow: false },
+        { line: '', size: '50px', align: 'center', color: 'blue', x: 50, y: 250, shadow: false }]
+>>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
 }
 
 function init() {
@@ -40,7 +45,7 @@ function toggleCanvas(toOpen, imgId) {
     if (toOpen) {
         elImgPool.style.display = 'none';
         elSearch.style.display = 'none';
-        elCanvas.style.display = 'flex';
+        elCanvas.style.display = 'block';
         gMeme.selectedImgId = imgId;
         gMeme.src = `../img/memes/${imgId}-meme.jpg`
         loadImg()
@@ -62,16 +67,21 @@ function toggleCanvas(toOpen, imgId) {
 }
 function loadImg() {
     img = new Image();
+<<<<<<< HEAD
     img.src = gMeme.src
     var height = img.height + 'px'
     var width = img.width + 'px'
     var elCanvas = document.querySelector("canvas");
     elCanvas.style.width = width;
     elCanvas.style.height = height;
+=======
+    img.src = gMeme.src;
+>>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
     img.onload = drawOnCanvas()
 }
 // Main Function (itsik)
 function drawOnCanvas() {
+<<<<<<< HEAD
     ctx.drawImage(img, 0, 0, 568, 360);
     gMeme.txts.forEach(function (txt, i) {
         ctx.font = `${txt.size}  ${gMeme.font}`;
@@ -83,6 +93,25 @@ function drawOnCanvas() {
             ctx.shadowOffsetX = 20;
             ctx.shadowOffsetY = 20;
             ctx.shadowBlur = 10;
+=======
+    var hRatio = canvas.width / img.width    ;
+    var vRatio = canvas.height / img.height  ;
+    var ratio  = Math.min ( hRatio, vRatio );
+    ctx.drawImage(img, 0,0, img.width, img.height, 0,0,img.width*ratio, img.height*ratio)
+        gMeme.txts.forEach(function (txt, i) {
+            ctx.font = `${txt.size}  ${gMeme.font}`;
+            ctx.fillStyle = txt.color;
+            ctx.fillText(txt.line, txt.x, txt.y);
+            ctx.fillText(txt.line, txt.x, txt.y);
+            if (txt.shadow) {
+                ctx.shadowColor = "black";
+                ctx.shadowOffsetX = 40;
+                ctx.shadowOffsetY = 40;
+                ctx.shadowBlur = 20;
+            }
+            ctx.fillText(txt.line, txt.x, txt.y);
+            ctx.fillText(txt.line, txt.x, txt.y);
+>>>>>>> dd5cd4fb7ac367c90fc6d0979c93f64a4793b912
             console.log(gMeme)
         }
         ctx.fillText(txt.line, txt.x, txt.y);

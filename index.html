@@ -32,93 +32,97 @@
             </a>
         </ul>
     </nav>
-    <div class="container">
-        <hr class="nav-hr">
-        <!-- search line -->
-        <div class="search">
-            <input onkeyup="searchImg()" onfocusout="renderPhotos(gImgs)" type="search" id="mySearch" name="q" placeholder="Search for memes...">
-            <button onclick="renderPhotos(gImgs)">All Memes</button>
+    <!-- <div class="container"> -->
+    <hr class="nav-hr">
+    <!-- search line -->
+    <div class="search">
+        <input onkeyup="searchImg()" onfocusout="renderPhotos(gImgs)" type="search" id="mySearch" name="q" placeholder="Search for memes...">
+        <button onclick="renderPhotos(gImgs)">All Memes</button>
 
-            <!-- cloud tag keyword (naaman) -->
-            <button onclick="toggleKeyWords()" onfocusout="renderPhotos(gImgs)">Sort By Key-Words</button>
-            <div class="keywords-cloud" hidden>
-            </div>
-            <input type="file"  accept="image/*" name="fileupload"  onchange="uploadImage()">
+        <!-- cloud tag keyword (naaman) -->
+        <button onclick="toggleKeyWords()" onfocusout="renderPhotos(gImgs)">Sort By Key-Words</button>
+        <div class="keywords-cloud" hidden>
         </div>
-        <div class="imgPool">
-        </div>
-        <section class="main">
-            <div class="memeGenerator" hidden>
-                <canvas width="600" height="300" id="canvas">
-                    Sorry, no canvas available
-                </canvas>
-                <!-- This is the generator itself, here write the text (itsik) -->
-                <div class="generatorFueturs">
-                    <div class="generatorButtonPanel">
-                        <button onclick="toggleCanvas(false)">back to menu
-                            <i class="fa fa-undo" aria-hidden="true"></i>
-                        </button>
-                        <button onclick="addTextLine()">Add Text Line</button>
-                        <select class="font-change" onchange="getFont(this.value)">
-                            <option value="verdana">verdana</option>
-                            <option value="Segoe UI">Segoe UI</option>
-                            <option value="Arial">Arial </option>
-                        </select>
-                        <a href="#" id="download" onclick="downloadImg(this)">
-                            <button> Download as image</button>
-                        </a>
-                    </div>
-                    <!-- rendering from JS -->
-                    <div class="generatorPanel"></div>
+        <input type="file" onchange="getUserImg(this.value)" accept="image/*" name="fileupload">
+    </div>
+    <div class="imgPool">
+    </div>
+
+    <section class="main">
+        <div class="memeGenerator" hidden>
+            <canvas width="600" height="450" id="canvas">
+                Sorry, no canvas available
+            </canvas>
+            <!-- This is the generator itself, here write the text (itsik) -->
+            <div class="generatorFueturs">
+                <div class="generatorButtonPanel">
+                    <button onclick="toggleCanvas(false)">back to menu
+                        <i class="fa fa-undo" aria-hidden="true"></i>
+                    </button>
+                    <button onclick="addTextLine()">Add Text Line</button>
+                    <select class="font-change" onchange="getFont(this.value)">
+                        <option value="verdana">verdana</option>
+                        <option value="Segoe UI">Segoe UI</option>
+                        <option value="Arial">Arial </option>
+                    </select>
+                    <a href="#" id="download" onclick="downloadImg(this)">
+                        <button> Download as image</button>
+                    </a>
                 </div>
+                <!-- rendering from JS -->
+                <div class="generatorPanel"></div>
             </div>
-        </section>
-        <div class="about-us-wraper">
-            <section class="about-us">
-                <img class="hex" src="img/profile-pic.jpg" alt="">
-                <div class="about-us-txt">
-                    <h2> Naaman </h2>
-                    <h3>
-                        Web Devlepoers
-                    </h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cumque asperiores magnam sapiente reprehenderit adipisci iure,
-                        est vel error molestiae saepe aliquam eaque quod nam? Ipsa quasi illum ipsum aspernatur?
-                    </p>
-                </div>
         </div>
-        <footer class="mainFooter">
-            <div class="form-box">
-                <h3>Get In Touch</h3>
-                <span>In order to get in touch use the contact below</span>
-                <form class="get-in-touch">
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="text" />
-                </form>
-                <button>SEND</button>
-            </div>
-            <div class="right-form-box">
-                <p>Gin is a spirit which derives its predominant flavour from juniper berries (Juniperus communis). From its
-                    earliest origins in the Middle Ages, gin has evolved from use in herbal medicine to an object of commerce
-                    in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great
-                    Britain (particularly in London) when William of Orange, leader of the Dutch Republic, </p>
-                <br>
-                <br>
-                <br>
-                <ul>
-                    <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                        Elm St1. 335. /Lost city
-                    </li>
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>                        
-                        Elm St1. 335. /Lost city
-                    </li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i>
-                        Elm St1. 335. /Lost city
-                    </li>
-                </ul>
+    </section>
+    <div class="about-us-wraper">
+        <section class="about-us">
+            <img class="hex" src="img/profile-pic.jpg" alt="">
+            <div class="about-us-txt">
+                <h2> Naaman & Itsik </h2>
+                <h3>
+                    Web Devlepoers
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic cumque asperiores magnam sapiente reprehenderit adipisci iure,
+                    est vel error molestiae saepe aliquam eaque quod nam? Ipsa quasi illum ipsum aspernatur?
+                </p>
             </div>
     </div>
+    <footer class="mainFooter">
+        <div class="form-box">
+            <h3>Get In Touch</h3>
+            <span>In order to get in touch use the contact below</span>
+            <form class="get-in-touch">
+                <input type="text" />
+                <input type="text" />
+                <input type="text" />
+            </form>
+            <button>SEND</button>
+        </div>
+        <div class="right-form-box">
+            <p>Gin is a spirit which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest
+                origins in the Middle Ages, gin has evolved from use in herbal medicine to an object of commerce in the spirits
+                industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly
+                in London) when William of Orange, leader of the Dutch Republic, </p>
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    Elm St1. 335. /Lost city
+                </li>
+                <li>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    Elm St1. 335. /Lost city
+                </li>
+                <li>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    Elm St1. 335. /Lost city
+                </li>
+            </ul>
+        </div>
+        </div>
     </footer>
     </div>
 
